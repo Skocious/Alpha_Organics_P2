@@ -1,0 +1,20 @@
+package entities;
+
+public class Producer {
+    int myInt;
+    String myString;
+    boolean myBoolean;
+
+public class Producer {
+    private String fullName;
+
+    public Entities(String fullName)  {
+        setFullName(fullName);
+
+    public void println() {
+        System.out.println("Sarah O'Connor");
+    }
+    
+    
+    
+
