@@ -1,0 +1,17 @@
+package entities;
+   
+public class Customer {
+    int myInt;
+    String myString;
+    boolean myBoolean;
+
+
+public class Customer {
+    private String fullName;
+
+    public Entities(String fullName)  {
+        setFullName(fullName);
+
+    public void println() {
+        System.out.println("John O'Connor");
+    }
