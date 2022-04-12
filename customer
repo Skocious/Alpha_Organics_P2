@@ -4,7 +4,12 @@ public class Customer {
     int myInt;
     String myString;
     boolean myBoolean;
-
+   
+public Customer(int myInt; String myString, boolean myBoolean){
+   this.myInt = myInt;
+   this.myString = myString;
+   this.myBoolean = myBoolean;
+   }
 
 public class Customer {
     private String fullName;
