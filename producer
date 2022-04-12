@@ -1,17 +1,17 @@
 package entities;
 
-public class Producer {
+public class src.Samantha.Entities.Producer {
     int myInt;
     String myString;
     boolean myBoolean;
     
-public Producer(int myInt, String myString, boolean myBoolean){
+public src.Samantha.Entities.Producer(int myInt, String myString, boolean myBoolean){
     this.myInt = myInt;
     this.myString = myString;
     this. myBoolean = myBoolean;
     }
 
-public class Producer {
+public class src.Samantha.Entities.Producer {
     private String fullName;
 
     public Entities(String fullName)  {
