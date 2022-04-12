@@ -4,6 +4,12 @@ public class Producer {
     int myInt;
     String myString;
     boolean myBoolean;
+    
+public Producer(int myInt, String myString, boolean myBoolean){
+    this.myInt = myInt;
+    this.myString = myString;
+    this. myBoolean = myBoolean;
+    }
 
 public class Producer {
     private String fullName;
