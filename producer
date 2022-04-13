@@ -1,0 +1,26 @@
+package entities;
+
+public class src.Samantha.Entities.Producer {
+    int myInt;
+    String myString;
+    boolean myBoolean;
+    
+public src.Samantha.Entities.Producer(int myInt, String myString, boolean myBoolean){
+    this.myInt = myInt;
+    this.myString = myString;
+    this. myBoolean = myBoolean;
+    }
+
+public class src.Samantha.Entities.Producer {
+    private String fullName;
+
+    public Entities(String fullName)  {
+        setFullName(fullName);
+
+    public void println() {
+        System.out.println("Sarah O'Connor");
+    }
+    
+    
+    
+
