@@ -1,4 +1,4 @@
-package src.Samantha.Entities;
+package entities;
 
 import java.util.Objects;
 

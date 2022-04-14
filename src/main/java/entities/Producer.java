@@ -1,5 +1,4 @@
-package git add .
-        entities;
+package entities;
 
 import java.util.Objects;
 
