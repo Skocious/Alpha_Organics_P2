@@ -2,10 +2,9 @@ package DataAccessLayer;
 
 public interface ProducerDAO {
 
-    //String interfaceField = "this is my interface string";
+    Producer selectProducerId(int ProducerId, String ProducerName, int LoginId);
 
-
-    Producer selectProducerById(int id);
+}
 
     
     
