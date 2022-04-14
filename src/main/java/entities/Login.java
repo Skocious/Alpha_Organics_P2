@@ -1,6 +1,5 @@
 package entities;
 
-import java.util.Objects;
 
 public class Login {
     int LoginId;
