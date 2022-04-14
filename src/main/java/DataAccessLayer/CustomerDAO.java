@@ -2,7 +2,7 @@ package DataAccessLayer;
 
 public interface CustomerDAO {
 
-    //String interfaceField = "this is my interface string";
+ Consumer selectConsumerId(int ConsumerId, String ConsumerUsername, String ConsumerPassword, int LoginId);
 
 
     Customer selectCustomerById(int id);
