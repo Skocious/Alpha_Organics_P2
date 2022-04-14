@@ -21,7 +21,7 @@ public class testItems {
 
     @Test
     public void createItemsSuccess(){
-        Items newItem = new Items("apple", "gala", 0, 1, "available", 1 );
+        Items newItem = new Items("apple", "gala", 0, 1);
         Items resultNewItems = itemsDAO.createItems(newItem);
         Assert.assertNotEquals(resultNewItems.getItem_id(), 1);
 
@@ -44,7 +44,7 @@ public class testItems {
 
     @Test
     public void updateItemsByIdSuccess(){
-        Items items = new Items("apple", "gala", 1, 1, "available", 1 );
+        Items items = new Items("apple", "gala", 1, 1);
         Items result = itemsDAO.updateItemsById(items);
         Assert.assertTrue(items.getItem_id() != 0);
     }

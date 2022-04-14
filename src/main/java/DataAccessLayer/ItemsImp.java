@@ -20,8 +20,6 @@ public class ItemsImp implements ItemsDAO{
             ps.setString(2, items.getItem_description());
             ps.setInt(3, items.getItem_id());
             ps.setFloat(4, 1);
-            ps.setString(5, items.getStatus());
-            ps.setInt(6, items.getLogin_id());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
@@ -45,9 +43,8 @@ public class ItemsImp implements ItemsDAO{
                     rs.getString("item_name"),
                     rs.getString("item_description"),
                     rs.getInt("item_id"),
-                    rs.getInt("price"),
-                    rs.getString("status"),
-                    rs.getInt("login_id")
+                    rs.getInt("price")
+
             );
             return items;
         } catch (SQLException e) {
@@ -69,9 +66,8 @@ public class ItemsImp implements ItemsDAO{
                         rs.getString("itemName"),
                         rs.getString("itemDescription"),
                         rs.getInt("itemId"),
-                        rs.getInt("price"),
-                        rs.getString("status"),
-                        rs.getInt("loginId")
+                        rs.getInt("price")
+
                 );
                 items.add(itemList);
             }
