@@ -7,19 +7,17 @@ public class Items {
     String item_description;
     int item_id;
     int price;
-    String status;
-    int login_id;
+
 
 
     public Items(){}
 
-    public Items(String itemName, String itemDescription, int itemId, int price, String status, int loginId){
+    public Items(String itemName, String itemDescription, int itemId, int price){
         this.item_name = itemName;
         this.item_description = itemDescription;
         this.item_id = itemId;
         this.price = price;
-        this.status = status;
-        this.login_id = loginId;
+
     }
 
     public String getItem_name() {
@@ -54,33 +52,17 @@ public class Items {
         this.price = price;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getLogin_id() {
-        return login_id;
-    }
-
-    public void setLogin_id(int login_id) {
-        this.login_id = login_id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return item_id == items.item_id && price == items.price && login_id == items.login_id && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description) && Objects.equals(status, items.status);
+        return item_id == items.item_id && price == items.price && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(item_name, item_description, item_id, price, status, login_id);
+        return Objects.hash(item_name, item_description, item_id, price);
     }
 
     @Override
@@ -90,8 +72,6 @@ public class Items {
                 ", item_description='" + item_description + '\'' +
                 ", item_id=" + item_id +
                 ", price=" + price +
-                ", status='" + status + '\'' +
-                ", login_id=" + login_id +
                 '}';
     }
 }
