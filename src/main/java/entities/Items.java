@@ -7,17 +7,19 @@ public class Items {
     String itemDescription;
     int itemId;
     int price;
-    //int status;
-    //int loginId
+    String status;
+    int loginId;
 
 
     public Items(){}
 
-    public Items(String itemName, String itemDescription, int itemId, int price){
+    public Items(String itemName, String itemDescription, int itemId, int price, String status, int loginId){
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemId = itemId;
         this.price = price;
+        this.status = status;
+        this.loginId = loginId;
     }
 
     public String getItemName() {
@@ -52,17 +54,33 @@ public class Items {
         this.price = price;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(int loginId) {
+        this.loginId = loginId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return itemId == items.itemId && price == items.price && Objects.equals(itemName, items.itemName) && Objects.equals(itemDescription, items.itemDescription);
+        return itemId == items.itemId && price == items.price && loginId == items.loginId && Objects.equals(itemName, items.itemName) && Objects.equals(itemDescription, items.itemDescription) && Objects.equals(status, items.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemName, itemDescription, itemId, price);
+        return Objects.hash(itemName, itemDescription, itemId, price, status, loginId);
     }
 
     @Override
@@ -72,6 +90,8 @@ public class Items {
                 ", itemDescription='" + itemDescription + '\'' +
                 ", itemId=" + itemId +
                 ", price=" + price +
+                ", status='" + status + '\'' +
+                ", loginId=" + loginId +
                 '}';
     }
 }

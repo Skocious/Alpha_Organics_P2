@@ -1,7 +1,5 @@
 package DataAccessLayer;
-
 import entities.Items;
-
 import java.util.List;
 
 public interface ItemsDAO {
@@ -21,7 +19,7 @@ public interface ItemsDAO {
     // update Items
     Items updateItemsById(Items items);
 
-    //delete player
+    //delete Items
    int deleteItemsById(int itemId);
 
 }

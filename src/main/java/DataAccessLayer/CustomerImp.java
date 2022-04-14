@@ -1,58 +1,33 @@
 package DataAccessLayer;
-
-import com.entities.Customer;
-import com.utils.DatabaseConnection;
-
-import javax.xml.transform.Result;
+import entities.Customer;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import utilities.DataBaseConnection;
 
-public class CustomerImp {
+public class CustomerImp implements CustomerDAO {
 
-    @Override
-public Customer createCustomer(Customer customer) {
-    try(Connection connection = DatabaseConnection.createConnection()){
-
-        String sql = "insert into customers values(default, ?, ?)";
-
-        PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-        ps.setString(1, customer.getFirstName());
-        ps.setString(2, customer.getLastName());
-        ps.execute();
-
-        ResultSet rs = ps.getGeneratedKeys();
-
-        rs.next();
-        customer.setCustomerId(rs.getInt("customer_id"));
-
-        return customer;
-    } catch(SQLException e){
-        e.printStackTrace();
-        return null;
+    public CustomerImp() {
+        super();
     }
-}
 
     @Override
-    public Customer selectCustomerById(int id) {
-        try(Connection connection = DatabaseConnection.createConnection()){
+    public Customer getCustomerId(int customerId) {
+        try (Connection connection = DataBaseConnection.createConnection()) {
             String sql = "select * from customers where customer_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, customerId);
             ResultSet rs = ps.executeQuery();
             rs.next();
             Customer customer = new Customer(
                     rs.getInt("customer_id"),
-                    rs.getString("first_name"),
-                    rs.getString("last_name")
+                    rs.getString("customer_name"),
+                    rs.getInt("login_id")
             );
             return customer;
-        } catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
-
+}
 
 
