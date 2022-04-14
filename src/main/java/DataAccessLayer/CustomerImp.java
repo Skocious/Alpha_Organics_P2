@@ -1,9 +1,11 @@
 package DataAccessLayer;
+
 import entites.Customer;
 import java.sql.*;
 import utilities.DataBaseConnection;
 
 public class CustomerImp implements CustomerDAO {
+
 
     public CustomerImp() {
         super();
@@ -28,4 +30,6 @@ public class CustomerImp implements CustomerDAO {
             return null;
         }
     }
+
 }
+

@@ -1,5 +1,7 @@
 package DataAccessLayer;
+
 import entites.Customer;
+
 
 public interface CustomerDAO {
 
