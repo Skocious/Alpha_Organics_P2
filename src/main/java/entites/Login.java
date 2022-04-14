@@ -5,14 +5,14 @@ import java.util.Objects;
 public class Login {
     int LoginId;
     String Username;
-    String Password;
+    String pw;
 
     public Login(){}
 
-    public Login(int LoginId, String Username, String Password) {
+    public Login(int LoginId, String Username, String pw) {
         this.LoginId = LoginId;
         this.Username = Username;
-        this.Password = Password;
+        this.pw = pw;
         }
 
     public int getLoginId() {
@@ -31,12 +31,12 @@ public class Login {
         Username = username;
     }
 
-    public String getPassword() {
-        return Password;
+    public String getpw() {
+        return pw;
     }
 
-    public void setPassword(String password) {
-        Password = password;
+    public void setpw(String pw) {
+        pw = pw;
     }
 
     @Override
@@ -44,12 +44,12 @@ public class Login {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Login login = (Login) o;
-        return LoginId == login.LoginId && Username.equals(login.Username) && Password.equals(login.Password);
+        return LoginId == login.LoginId && Username.equals(login.Username) && pw.equals(login.pw);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(LoginId, Username, Password);
+        return Objects.hash(LoginId, Username, pw);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Login {
         return "Login{" +
                 "LoginId=" + LoginId +
                 ", Username='" + Username + '\'' +
-                ", Password='" + Password + '\'' +
+                ", pw='" + pw + '\'' +
                 '}';
     }
 }
