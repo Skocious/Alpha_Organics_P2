@@ -3,47 +3,47 @@ package entities;
 import java.util.Objects;
 
 public class Items {
-    String itemName;
-    String itemDescription;
-    int itemId;
+    String item_name;
+    String item_description;
+    int item_id;
     int price;
     String status;
-    int loginId;
+    int login_id;
 
 
     public Items(){}
 
     public Items(String itemName, String itemDescription, int itemId, int price, String status, int loginId){
-        this.itemName = itemName;
-        this.itemDescription = itemDescription;
-        this.itemId = itemId;
+        this.item_name = itemName;
+        this.item_description = itemDescription;
+        this.item_id = itemId;
         this.price = price;
         this.status = status;
-        this.loginId = loginId;
+        this.login_id = loginId;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getItem_name() {
+        return item_name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setItem_name(String item_name) {
+        this.item_name = item_name;
     }
 
-    public String getItemDescription() {
-        return itemDescription;
+    public String getItem_description() {
+        return item_description;
     }
 
-    public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
+    public void setItem_description(String item_description) {
+        this.item_description = item_description;
     }
 
-    public int getItemId() {
-        return itemId;
+    public int getItem_id() {
+        return item_id;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public void setItem_id(int item_id) {
+        this.item_id = item_id;
     }
 
     public int getPrice() {
@@ -62,12 +62,12 @@ public class Items {
         this.status = status;
     }
 
-    public int getLoginId() {
-        return loginId;
+    public int getLogin_id() {
+        return login_id;
     }
 
-    public void setLoginId(int loginId) {
-        this.loginId = loginId;
+    public void setLogin_id(int login_id) {
+        this.login_id = login_id;
     }
 
     @Override
@@ -75,23 +75,23 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return itemId == items.itemId && price == items.price && loginId == items.loginId && Objects.equals(itemName, items.itemName) && Objects.equals(itemDescription, items.itemDescription) && Objects.equals(status, items.status);
+        return item_id == items.item_id && price == items.price && login_id == items.login_id && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description) && Objects.equals(status, items.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemName, itemDescription, itemId, price, status, loginId);
+        return Objects.hash(item_name, item_description, item_id, price, status, login_id);
     }
 
     @Override
     public String toString() {
         return "Items{" +
-                "itemName='" + itemName + '\'' +
-                ", itemDescription='" + itemDescription + '\'' +
-                ", itemId=" + itemId +
+                "item_name='" + item_name + '\'' +
+                ", item_description='" + item_description + '\'' +
+                ", item_id=" + item_id +
                 ", price=" + price +
                 ", status='" + status + '\'' +
-                ", loginId=" + loginId +
+                ", login_id=" + login_id +
                 '}';
     }
 }
