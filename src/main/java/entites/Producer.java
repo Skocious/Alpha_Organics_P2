@@ -1,4 +1,4 @@
-package entities;
+package entites;
 
 public class Producer {
 }

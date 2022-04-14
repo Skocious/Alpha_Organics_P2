@@ -1,10 +1,4 @@
 package DataAccessLayer;
-import entities.Items;
-import utilities.DataBaseConnection;
-
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 //public class ItemsImp implements ItemsDAO{
 //

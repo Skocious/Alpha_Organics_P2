@@ -1,5 +1,5 @@
 package DataAccessLayer;
-import entities.Items;
+import entites.Items;
 import java.util.List;
 
 public interface ItemsDAO {
