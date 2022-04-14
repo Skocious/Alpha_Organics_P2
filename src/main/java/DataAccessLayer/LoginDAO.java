@@ -1,8 +1,10 @@
 package DataAccessLayer;
 
-public class LoginDAO {
+import entities.Login;
 
-    Login selectLoginId(String Username, String Password, int LoginId);
+public interface LoginDAO {
 
+    Login selectProducerId(String Username, String Password, int LoginId);
 
+    Login selectCustomerId(String Username, String Password, int LoginId);
 }
