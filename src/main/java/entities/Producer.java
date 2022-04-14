@@ -1,4 +1,5 @@
-package src.Samantha.Entities;
+package git add .
+        entities;
 
 import java.util.Objects;
 

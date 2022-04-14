@@ -1,6 +1,6 @@
 package DataAccessLayer;
 
-import entites.Customer;
+import entities.Customer;
 import java.sql.*;
 import utilities.DataBaseConnection;
 
