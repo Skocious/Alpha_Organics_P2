@@ -3,7 +3,7 @@ package DataAccessLayer;
 
 import entities.Login;
 
-public interface LoginDAO {
+
 
 
 public interface LoginDAO {
