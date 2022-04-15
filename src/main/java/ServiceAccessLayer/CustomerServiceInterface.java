@@ -1,8 +1,10 @@
 package ServiceAccessLayer;
-
+import DataAccessLayer.CustomerDAO;
 import entities.Customer;
 
-public interface CustomerServiceInterface {
+import java.util.List;
+
+public interface CustomerSO extends CustomerDAO {
 
     Customer serviceGetCustomerId(int customerId);
 }

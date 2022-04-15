@@ -1,8 +1,10 @@
 package ServiceAccessLayer;
-
+import DataAccessLayer.ProducerDAO;
 import entities.Producer;
 
-public interface ProducerServiceInterface {
+import java.util.List;
+
+public interface ProducerSO extends ProducerDAO {
 
     Producer serviceSelectProducerId(int ProducerId, String ProducerName, int LoginId);
 }

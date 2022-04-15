@@ -1,10 +1,10 @@
 package ServiceAccessLayer;
-
+import DataAccessLayer.ItemsDAO;
 import entities.Items;
 
 import java.util.List;
 
-public interface ItemServiceInterface {
+public interface ItemSO extends ItemsDAO {
 
     Items serviceCreateItems(Items items);
 
