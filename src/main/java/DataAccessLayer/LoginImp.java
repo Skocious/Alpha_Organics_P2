@@ -1,6 +1,6 @@
 package DataAccessLayer;
 import entities.Login;
-import utilities.DatabaseConnection;
+import utilities.DataBaseConnection;
 import java.sql.*;
 
 public class LoginImp implements LoginDAO {
@@ -9,11 +9,11 @@ public class LoginImp implements LoginDAO {
 
 
     @Override
-    public Login selectProducerLoginById(int id) {
-        try (Connection connection = DatabaseConnection.createConnection()) {
-            String sql = "select * from  producer where login_id = (select login_id from login where login_name = %s and pw = %s);"
+    public Login selectProducerId(String Username, String Password, int LoginId) {
+        try (Connection connection = DataBaseConnection.createConnection()) {
+            String sql = "select * from  producer where login_id = (select login_id from login where login_name = %s and pw = %s)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, LoginId);
             ResultSet rs = ps.executeQuery();
             rs.next();
             Login login = new Login(
@@ -29,11 +29,11 @@ public class LoginImp implements LoginDAO {
     }
 
     @Override
-    public Login selectCustomerLoginById(int id) {
-        try (Connection connection = DatabaseConnection.createConnection()) {
-            String sql = "select * from  customer where login_id = (select login_id from login where login_name = %s and pw = %s);"
+    public Login selectCustomerId(String Username, String Password, int LoginId) {
+        try (Connection connection = DataBaseConnection.createConnection()) {
+            String sql = "select * from  customer where login_id = (select login_id from login where login_name = %s and pw = %s)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, LoginId);
             ResultSet rs = ps.executeQuery();
             rs.next();
             Login login = new Login(
