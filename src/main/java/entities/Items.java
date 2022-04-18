@@ -3,21 +3,38 @@ package entities;
 import java.util.Objects;
 
 public class Items {
-    String item_name;
-    String item_description;
-    int item_id;
-    int price;
+    private int item_id;
+    private int producer_id;
+    private String item_name;
+    private String item_description;
+    private int price;
 
 
 
     public Items(){}
 
-    public Items(String itemName, String itemDescription, int itemId, int price){
+    public Items(int itemId, int producer_id, String itemName, String itemDescription, int price){
+        this.item_id = itemId;
+        this.producer_id = producer_id;
         this.item_name = itemName;
         this.item_description = itemDescription;
-        this.item_id = itemId;
         this.price = price;
+    }
 
+    public int getItem_id() {
+        return item_id;
+    }
+
+    public void setItem_id(int item_id) {
+        this.item_id = item_id;
+    }
+
+    public int getProducer_id() {
+        return producer_id;
+    }
+
+    public void setProducer_id(int producer_id) {
+        this.producer_id = producer_id;
     }
 
     public String getItem_name() {
@@ -36,14 +53,6 @@ public class Items {
         this.item_description = item_description;
     }
 
-    public int getItem_id() {
-        return item_id;
-    }
-
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -57,23 +66,25 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return item_id == items.item_id && price == items.price && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
+        return item_id == items.item_id && producer_id == items.producer_id && price == items.price && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(item_name, item_description, item_id, price);
+        return Objects.hash(item_id, producer_id, item_name, item_description, price);
     }
 
     @Override
     public String toString() {
         return "Items{" +
-                "item_name='" + item_name + '\'' +
+                "item_id=" + item_id +
+                ", producer_id=" + producer_id +
+                ", item_name='" + item_name + '\'' +
                 ", item_description='" + item_description + '\'' +
-                ", item_id=" + item_id +
                 ", price=" + price +
                 '}';
     }
+
 }
 
 /* item_name, item_description, item_id, price */
