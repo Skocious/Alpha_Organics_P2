@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inital-scale =1.0" />
+    <title>Alpha Organics</title>
+    <link rl="" stylesheet: href="style.css">
+    <script defer src="customerHomepage.js"></script>
+</head>
+
+<body>
+    <main id="main-holder">
+        <h1 id="login-header">Alpha Organics Account Login</h1>
+
+        <div id="login-error-msg-holder">
+            <p id="login-error-msg">
+                Invalid Producer ID
+                <span id="error-msg-second-line">and/or password</span>
+            </p>
+        </div>
+    </main>
 </body>
+
+<body>
+    <section>
+        <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Producer ID" />
+        <br />
+        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
+
+        <button id="loginButton" onclick="loginFunction()">login</button>
+
+        <div id="login-error-msg-holder">
+            <p id="login-error-msg">
+                Invalid Customer ID
+                <span id="error-msg-second-line">and/or password</span>
+            </p>
+        </div>
+    </section>
+    <section>
+        <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Customer ID" />
+        <br />
+        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
+
+        <button id="loginButton" onclick="loginFunction()">login</button>
+    </section>
+    </main>
+</body>
+
 </html>
