@@ -33,7 +33,7 @@ public class Apps {
 
         app.get("/items", itemsController.selectAllItems);
 
-        app.post("/items/update", itemsController.updateItemsbyId);
+        app.put("/items/update", itemsController.updateItemsbyId);
 
         app.delete("/items/delete", itemsController.deleteItemsById);
 
