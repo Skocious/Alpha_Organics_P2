@@ -20,7 +20,7 @@ public interface ItemsDAO {
     Items updateItemsById(Items items);
 
     //delete Items
-   int deleteItemsById(int itemId);
+    int deleteItemsById(int itemId);
 
 }
 
