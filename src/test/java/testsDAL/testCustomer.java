@@ -12,19 +12,13 @@ public class testCustomer {
 
     @Test
     public void selectCustomerByIdSuccess(){
-        Customer customer = customerDAO.getCustomerId(-1);
-        Assert.assertEquals(customer.getCustomer_id(), -1);
+        Customer customer = customerDAO.getCustomerId(3);
+        Assert.assertEquals(customer.getCustomer_id(), 3);
     }
 
     @Test
     public void selectCustomerByIdFailure(){
-        Customer customer = customerDAO.getCustomerId(-1);
-        Assert.assertEquals(customer.getCustomer_id(),-1);
+        Customer customer = customerDAO.getCustomerId(2);
+        Assert.assertNull(customer);
     }
-
-
-
-
-
 }
-    

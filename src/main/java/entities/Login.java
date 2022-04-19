@@ -4,17 +4,17 @@ package entities;
 import java.util.Objects;
 
 public class Login {
-    int LoginId;
-    String Username;
-    String Password;
+    private int LoginId;
+    private String Username;
+    private int Password;
 
     public Login(){}
 
-    public Login(int LoginId, String Username, String Password) {
+    public Login(int LoginId, String Username, int Password) {
         this.LoginId = LoginId;
         this.Username = Username;
         this.Password = Password;
-        }
+    }
 
     public int getLoginId() {
         return LoginId;
@@ -32,11 +32,11 @@ public class Login {
         Username = username;
     }
 
-    public String getPassword() {
+    public int getPassword() {
         return Password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(int password) {
         Password = password;
     }
 
@@ -45,7 +45,7 @@ public class Login {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Login login = (Login) o;
-        return LoginId == login.LoginId && Username.equals(login.Username) && Password.equals(login.Password);
+        return LoginId == login.LoginId && Password == login.Password && Objects.equals(Username, login.Username);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Login {
         return "Login{" +
                 "LoginId=" + LoginId +
                 ", Username='" + Username + '\'' +
-                ", Password='" + Password + '\'' +
+                ", Password=" + Password +
                 '}';
     }
 }

@@ -11,9 +11,6 @@ public class Apps {
             config.enableCorsForAllOrigins();
             config.enableDevLogging();
         });
-        CustomerDAO customerDAO = new CustomerImp();
-        CustomerSO customerSO = new CustomerSImp(customerDAO);
-        CustomerControllers customerControllers = new CustomerControllers(customerSO);
 
         ProducerDAO producerDAO = new ProducerImp();
         ProducerSO producerSO = new ProducerSImp(producerDAO);
@@ -27,15 +24,30 @@ public class Apps {
         ItemsSO itemsSO = new ItemsSImp(itemsDAO);
         ItemsController itemsController = new ItemsController(itemsSO);
 
+        TransactionDAO transactionDAO = new TransactionImp();
+        TransactionsSO transactionsSO = new TransactionSImp(transactionDAO);
+        TransactionsController transactionsController = new TransactionsController(transactionsSO);
+
         app.post("/items", itemsController.createItems);
 
-        app.get("/items/:itemId", itemsController.selectItemsById);
+        app.get("/items/{id}", itemsController.selectItemsById);
 
         app.get("/items", itemsController.selectAllItems);
 
-        app.put("/items/update", itemsController.updateItemsbyId);
+        app.put("/items", itemsController.updateItemsById);
 
-        app.delete("/items/delete", itemsController.deleteItemsById);
+        app.delete("/items/{id}", itemsController.deleteItemsById);
 
+        app.post("/producer", loginControllers.selectProducerId);
+
+        app.post("/customer", LoginControllers.selectCustomerId);
+
+        app.post("/transactions", transactionsController.createTransaction);
+
+        app.get("/transactions/{producerId}", transactionsController.getAllTransactionByCustomerId);
+
+        app.get("/transactions/{customerId}", transactionsController.getAllTransactionsByProducerId);
+
+        app.get("/producer", producerControllers.getProducerId);
     }
 }
