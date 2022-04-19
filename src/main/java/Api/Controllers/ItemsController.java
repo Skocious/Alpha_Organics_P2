@@ -28,5 +28,5 @@ public class ItemsController {
     public Header deleteItemsById = ctx ->{
         ctx.result("Item deleted");
         ctx.result(200);
-    }
+    };
 }
