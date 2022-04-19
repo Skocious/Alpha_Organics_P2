@@ -18,7 +18,7 @@ public class testCustomer {
 
     @Test
     public void selectCustomerByIdFailure(){
-        Customer customer = customerDAO.getCustomerId(2);
+        Customer customer = customerDAO.getCustomerId(-1);
         Assert.assertNull(customer);
     }
 }
