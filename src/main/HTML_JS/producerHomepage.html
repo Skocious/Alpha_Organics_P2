@@ -9,30 +9,30 @@
 </head>
 
 <body>
-    <main id="main-holder" div style="text-align: center;" action="employee_homepage.html">
-        <h1 id="welcome-header">Welcome to the Alpha Organics Homepage, {producername}!</h1>
+    <main id="main-holder" div style="text-align: center;" action="producerHomepage.html">
+        <h1 id="welcome-header">Welcome to the Alpha Organics Homepage, {Producername}!</h1>
         <h3 id="welcome-notification" style="text-align: center;">Please enter Item, Item Description, and Item Price.</h3>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: center;" class="create">
             <label for="amount">Enter Item: </label>
             <input type="text" name="item" id="letters" placeholder="Please enter amount." required>
         </div>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: center;" class="create">
             <label for="item id">Item Description: </label>
-            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
+            <input type="text" name="item description" id="letters" placeholder="Please enter 0 char." required>
         </div>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: center;" class="create">
             <label for="item id">Item Price: </label>
             <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
         </div>
         </select>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: center;" class="create">
             <br>
-            <button id="submitButton" onclick="createReimbursementRequest()">Item Submit</button>
-            <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
+            <button id="submitButton" onclick="createItemById()">Item Submit</button>
+            <!-- <button onclick="currentItemCreateById()">See Items</button> -->
         </div>
         <br>
-        <table id="statusTable">
-            <thead id="reimbTHead">
+        <table id="itemTable">
+            <thead id="itemHead">
                 <tr>
                     <th>Producer Name</th>
                     <th>Item Name</th>
