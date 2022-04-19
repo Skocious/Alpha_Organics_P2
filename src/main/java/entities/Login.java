@@ -6,11 +6,11 @@ import java.util.Objects;
 public class Login {
     private int LoginId;
     private String Username;
-    private int Password;
+    private String Password;
 
     public Login(){}
 
-    public Login(int LoginId, String Username, int Password) {
+    public Login(int LoginId, String Username, String Password) {
         this.LoginId = LoginId;
         this.Username = Username;
         this.Password = Password;
@@ -32,11 +32,11 @@ public class Login {
         Username = username;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return Password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         Password = password;
     }
 
@@ -45,7 +45,7 @@ public class Login {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Login login = (Login) o;
-        return LoginId == login.LoginId && Password == login.Password && Objects.equals(Username, login.Username);
+        return LoginId == login.LoginId && Objects.equals(Username, login.Username) && Objects.equals(Password, login.Password);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Login {
         return "Login{" +
                 "LoginId=" + LoginId +
                 ", Username='" + Username + '\'' +
-                ", Password=" + Password +
+                ", Password='" + Password + '\'' +
                 '}';
     }
 }

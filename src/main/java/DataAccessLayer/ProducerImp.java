@@ -14,7 +14,7 @@ public class ProducerImp implements ProducerDAO {
     @Override
     public Producer selectProducerId(int ProducerId, String ProducerName, int LoginId) {
         try(Connection connection = DataBaseConnection.createConnection()){
-            String sql = "select * from producers where producer_id = ?";
+            String sql = "select * from producer where producer_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1,ProducerId);
             ResultSet rs = ps.executeQuery();

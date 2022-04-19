@@ -51,7 +51,7 @@ public class ItemsImp implements ItemsDAO{
                     rs.getInt("producer_id"),
                     rs.getString("item_name"),
                     rs.getString("item_description"),
-                    rs.getInt("price")
+                    rs.getFloat("price")
             );
             return items;
         } catch (SQLException e) {
@@ -74,7 +74,7 @@ public class ItemsImp implements ItemsDAO{
                         rs.getInt("producer_id"),
                         rs.getString("item_name"),
                         rs.getString("item_description"),
-                        rs.getInt("price")
+                        rs.getFloat("price")
                 );
                 items.add(itemList);
             }
