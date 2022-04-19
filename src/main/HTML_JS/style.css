@@ -1,53 +1,19 @@
-<style>* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* Style the header */
-
-head {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-}
-
-nav {
-    float: right;
-    width: 30%;
-    height: 300px;
-    /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-}
-
-
-/* Style the list inside the menu */
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px;
-    /* only for demonstration, should be removed */
-}
-
-
-/* Clear floats after the columns */
-
-section::after {
-    content: "";
-    display: table;
-    clear: both;
-}
+            h1 {
+            text-align: center;
+        }
+        
+        h3 {
+            text-align: center;
+            "}
+ table th,
+            td {
+                text-align: center;
+                border: 1px solid black;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 40px;
+            }
+            table.center {
+                margin-top: auto;
+            }
