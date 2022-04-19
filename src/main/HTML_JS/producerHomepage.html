@@ -14,29 +14,35 @@
 </style>
 
 <body>
-    <main id="main-holder" action="employee_homepage.html">
-        <h1 id="welcome-header">Welcome Producer to Alpha Organics Homepage!</h1>
+
+    <div>
+        */Entering Product
+    </div>
+
+
+    <div>
+
+    </div>
+
+    <main id="main-holder" div style="text-align: center;" action="employee_homepage.html">
+        <h1 id="welcome-header">Welcome Producer to the Alpha Organics Homepage, {producername}!</h1>
         <h3 id="welcome-notification" style="text-align: center;">Enter a request for each seperate category.</h3>
-        <div class="request">
-            <label for="amount">Enter amount: </label>
+        <div style="text-align: left;" class="request">
+            <label for="amount">Enter item: </label>
             <input type="number" name="balance" id="amount" placeholder="Please enter amount." required>
         </div>
-        <div class="request">
-            <label for="comment">Comments: </label>
+        <div style="text-align: left;" class="request">
+            <label for="comment">Item id: </label>
             <input type="text" name="comment" id="comment" placeholder="Please enter <100 char." required>
         </div>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: left;" class="request">
             <label for="category">Choose a category: </label>
             <select name="category" id="category" required>
-          <option value="travel">Travel</option>
-          <option value="supplies" selected>Supplies </option>
-          <option value="meals">Meals</option>
-          <option value="parking">Parking</option>
-          <option value="communication">Communications</option>
+          <option value="travel">Add Item</option>
       </select>
-            <div class="request">
+            <div style="text-align: center;" class="request">
                 <br>
-                <button id="submitButton" onclick="createReimbursementRequest()">Request Submit</button>
+                <button id="submitButton" onclick="createReimbursementRequest()">Item Submit</button>
                 <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
             </div>
             <br>
@@ -65,14 +71,36 @@
 
             <br>
             <div class="request">
-                <label for="cancel-req">Cancel Request:</label>
+                <label for="cancel-req">Cancel Item:</label>
                 <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
-                <button id="cancelButton" onclick="cancelReimbursementRequest()">Cancel Submit</button>
+                <button id="cancelButton" onclick="cancelReimbursementRequest()">Delete Item</button>
             </div>
-            <br>
-            <button id="logOut" onclick="clearStore_return_to_login()">Logout</button>
+            <div>
+                <table>
+                    <tr>
+                        <th>Producer Name</th>
+                        <th>Item Name</th>
+                        <th>Item Id</th>
+                        <th>Item Description</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Weatherman Foods</td>
+                        <td>Oranges</td>
+                        <td>1</td>
+                        <td>Fruit</td>
+                        <td>1.19</td>
+                    </tr>
+                    <tr>
+                        <td>Weatherman Foods</td>
+                        <td>Bananas</td>
+                        <td>1</td>
+                        <td>Fruit</td>
+                        <td>0.59</td>
+                    </tr>
+                </table>
+            </div>
     </main>
-
 </body>
 
 </html>
