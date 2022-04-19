@@ -12,7 +12,7 @@ public class ProducerImp implements ProducerDAO {
     public ProducerImp() {super();}
 
     @Override
-    public Producer selectProducerId(int ProducerId, String ProducerName, int LoginId) {
+    public Producer selectProducerId(int ProducerId) {
         try(Connection connection = DataBaseConnection.createConnection()){
             String sql = "select * from producer where producer_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
