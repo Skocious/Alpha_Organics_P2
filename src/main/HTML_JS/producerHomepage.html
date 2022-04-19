@@ -3,103 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Alpha Organics Producer Homepage</title>
+    <link rl="" stylesheet: href="style.css">
+    <script defer src="producerHomePage.js"></script>
 </head>
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
-</style>
 
 <body>
-
-    <div>
-        */Entering Product
-    </div>
-
-
-    <div>
-
-    </div>
-
     <main id="main-holder" div style="text-align: center;" action="employee_homepage.html">
-        <h1 id="welcome-header">Welcome Producer to the Alpha Organics Homepage, {producername}!</h1>
-        <h3 id="welcome-notification" style="text-align: center;">Enter a request for each seperate category.</h3>
-        <div style="text-align: left;" class="request">
+        <h1 id="welcome-header">Welcome to the Alpha Organics Homepage, {producername}!</h1>
+        <h3 id="welcome-notification" style="text-align: center;">Enter an item then choose a category.</h3>
+        <div style="text-align: center;" class="request">
             <label for="amount">Enter item: </label>
-            <input type="number" name="balance" id="amount" placeholder="Please enter amount." required>
+            <input type="text" name="item" id="letters" placeholder="Please enter amount." required>
         </div>
-        <div style="text-align: left;" class="request">
-            <label for="comment">Item id: </label>
-            <input type="text" name="comment" id="comment" placeholder="Please enter <100 char." required>
+        <div style="text-align: center;" class="request">
+            <label for="item id">Item description: </label>
+            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
         </div>
-        <div style="text-align: left;" class="request">
-            <label for="category">Choose a category: </label>
-            <select name="category" id="category" required>
-          <option value="travel">Add Item</option>
-      </select>
-            <div style="text-align: center;" class="request">
-                <br>
-                <button id="submitButton" onclick="createReimbursementRequest()">Item Submit</button>
-                <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
-            </div>
+        <div style="text-align: center;" class="request">
+            <label for="item id">Item price: </label>
+            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
+        </div>
+        </select>
+        <div style="text-align: center;" class="request">
             <br>
-            <table id="statusTable">
-                <thead id="reimbTHead">
-                    <tr>
-                        <th>Amount</th>
-                        <th>Comments</th>
-                        <th>Category</th>
-                        <th>Request ID</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr>
+            <button id="submitButton" onclick="createReimbursementRequest()">Item Submit</button>
+            <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
+        </div>
+        <br>
+        <table id="statusTable">
+            <thead id="reimbTHead">
+                <tr>
+                    <th>Producer Name</th>
+                    <th>Item Name</th>
+                    <th>Item Id</th>
+                    <th>Item Description</th>
+                    <th>Item Price</th>
+                </tr>
+                <tr>
+                    <td>Weatherman Foods</td>
+                    <td>Oranges</td>
+                    <td>1</td>
+                    <td>Fruit</td>
+                    <td>1.19</td>
+                </tr>
+                <tr>
+                    <td>Weatherman Foods</td>
+                    <td>Bananas</td>
+                    <td>1</td>
+                    <td>Fruit</td>
+                    <td>0.59</td>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
 
-                    </tr>
-                </tbody>
-                <tfoot id="allbalance">
-                    <tr>
-                        <th id="openBalance"></th>
-                        <th>Total Balance Due</th>
-                    </tr>
-                </tfoot>
-            </table>
+                </tr>
+            </tbody>
+            <tfoot id="allbalance">
+                <tr>
+                    <th id="openBalance"></th>
+                    <th>Total Balance Due</th>
+                </tr>
+            </tfoot>
+        </table>
 
-            <br>
-            <div class="request">
-                <label for="cancel-req">Cancel Item:</label>
-                <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
-                <button id="cancelButton" onclick="cancelReimbursementRequest()">Delete Item</button>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <th>Producer Name</th>
-                        <th>Item Name</th>
-                        <th>Item Id</th>
-                        <th>Item Description</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>Weatherman Foods</td>
-                        <td>Oranges</td>
-                        <td>1</td>
-                        <td>Fruit</td>
-                        <td>1.19</td>
-                    </tr>
-                    <tr>
-                        <td>Weatherman Foods</td>
-                        <td>Bananas</td>
-                        <td>1</td>
-                        <td>Fruit</td>
-                        <td>0.59</td>
-                    </tr>
-                </table>
-            </div>
+        <br>
+        <div style="text-align: center;" class="request">
+            <label for="cancel-req">Cancel Item:</label>
+            <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
+            <button id="cancelButton" onclick="cancelReimbursementRequest()">Delete Item</button>
+        </div>
+
     </main>
 </body>
 
