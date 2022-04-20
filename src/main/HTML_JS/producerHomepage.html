@@ -14,7 +14,7 @@
         <h3 id="welcome-notification" style="text-align: center;">Please enter Item, Item Description, and Item Price.</h3>
         <div style="text-align: center;" class="create">
             <label for="amount">Enter Item: </label>
-            <input type="text" name="item" id="letters" placeholder="Please enter amount." required>
+            <input type="text" name="item name" id="letters" placeholder="Please enter amount." required>
         </div>
         <div style="text-align: center;" class="create">
             <label for="item id">Item Description: </label>
@@ -22,7 +22,7 @@
         </div>
         <div style="text-align: center;" class="create">
             <label for="item id">Item Price: </label>
-            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
+            <input type="number" name="item price" id="integers" placeholder="Please enter 0 char." required>
         </div>
         </select>
         <div style="text-align: center;" class="create">
@@ -55,24 +55,13 @@
                     <td>0.59</td>
                 </tr>
             </thead>
-            <tbody id="tableBody">
-                <tr>
-
-                </tr>
-            </tbody>
-            <tfoot id="allbalance">
-                <tr>
-                    <th id="openBalance"></th>
-                    <th>Total Balance Due</th>
-                </tr>
-            </tfoot>
         </table>
 
         <br>
         <div style="text-align: center;" class="request">
             <label for="cancel-req">Cancel Item:</label>
             <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
-            <button id="cancelButton" onclick="cancelReimbursementRequest()">Delete Item</button>
+            <button id="cancelButton" onclick="cancelItemId()">Delete Item</button>
         </div>
 
     </main>
