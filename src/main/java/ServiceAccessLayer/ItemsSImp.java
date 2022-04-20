@@ -15,15 +15,14 @@ public class ItemsSImp implements ItemsSO{
 
     @Override
     public Items serviceCreateItems(Items items) {
-        try { if(items.getItem_name().length() <= 20 &&
-                items.getItem_description().length() <= 100 &&
-                items.getPrice() <= 9999 &&
-                items.getPrice() != 0){
+        if(items.getItem_name().length() <= 20 &&
+                 items.getItem_description().length() <= 100 &&
+                 items.getPrice() <= 9999 &&
+                 items.getPrice() != 0)
             return this.itemsDAO.createItems(items);
-        }
-        }catch (InvalidId e) {
+         else {
             throw new InvalidId("Information entered is not correct, please try again.");
-        }return null; // if null catch in api
+        }
     }
 
     @Override
@@ -42,7 +41,6 @@ public class ItemsSImp implements ItemsSO{
         }
         return null;
     }
-
 
     @Override
     public Items serviceUpdateItemsById(Items items) {
