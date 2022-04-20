@@ -13,7 +13,7 @@ public class ProducerSImp implements ProducerSO{
     @Override
     public Producer serviceSelectProducerId(int ProducerId, String ProducerName, int LoginId) {
         try {
-            return this.producerDAO.selectProducerId(ProducerId, ProducerName, LoginId);
+            return this.producerDAO.selectProducerId(ProducerId);
         }catch (InvalidId e) {
             throw new InvalidId("Producer Id is not correct, please try again.");
         }

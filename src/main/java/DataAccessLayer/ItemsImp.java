@@ -47,11 +47,11 @@ public class ItemsImp implements ItemsDAO{
             ResultSet rs = ps.executeQuery();
             rs.next();
             Items items = new Items(
-                    rs.getInt("item_id"),
-                    rs.getInt("producer_id"),
-                    rs.getString("item_name"),
-                    rs.getString("item_description"),
-                    rs.getFloat("price")
+                rs.getInt("item_id"),
+                rs.getInt("producer_id"),
+                rs.getString("item_name"),
+                rs.getString("item_description"),
+                rs.getFloat("price")
             );
             return items;
         } catch (SQLException e) {

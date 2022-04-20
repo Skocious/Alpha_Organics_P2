@@ -27,8 +27,8 @@ public class testItems {
 
     @Test
     public void selectItemsByIdSuccess(){
-        Items items = itemsDAO.selectItemsById(2);
-        Assert.assertEquals(items.getItem_id(), 2);
+        Items items = itemsDAO.selectItemsById(4);
+        Assert.assertEquals(items.getItem_id(), 4);
     }
 
     //check import
