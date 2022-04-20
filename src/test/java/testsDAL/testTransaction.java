@@ -5,12 +5,14 @@ import entities.Transaction;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class testTransaction {
     TransactionImp transactionDAO = new TransactionImp();
 
     @Test
     public void createTransactionSuccess(){
-        Transaction newTransaction = new Transaction(0, 3, 4, 1);
+        Transaction newTransaction = new Transaction(0, 3, 1, 111, 4);
         Transaction resultNewTransaction = transactionDAO.createTransaction(newTransaction);
         Assert.assertNotEquals(resultNewTransaction.getTransactionId(), 0);
     }
@@ -23,8 +25,8 @@ public class testTransaction {
 
     @Test
     public void getAllTransactionByProducerId(){
-        Transaction transactions = transactionDAO.getAllTransactionByProducerId(4);
-        Assert.assertEquals(transactions.getProducerId(), 4);
+        Transaction transactions = transactionDAO.getAllTransactionByProducerId(1);
+        Assert.assertEquals(transactions.getProducerId(), 1);
     }
 
 }

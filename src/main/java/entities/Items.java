@@ -7,13 +7,13 @@ public class Items {
     private int producer_id;
     private String item_name;
     private String item_description;
-    private int price;
+    private float price;
 
 
 
     public Items(){}
 
-    public Items(int itemId, int producer_id, String itemName, String itemDescription, int price){
+    public Items(int itemId, int producer_id, String itemName, String itemDescription, float price){
         this.item_id = itemId;
         this.producer_id = producer_id;
         this.item_name = itemName;
@@ -53,11 +53,11 @@ public class Items {
         this.item_description = item_description;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -66,7 +66,7 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return item_id == items.item_id && producer_id == items.producer_id && price == items.price && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
+        return item_id == items.item_id && producer_id == items.producer_id && Float.compare(items.price, price) == 0 && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
     }
 
     @Override
@@ -84,7 +84,6 @@ public class Items {
                 ", price=" + price +
                 '}';
     }
-
 }
 
 /* item_name, item_description, item_id, price */

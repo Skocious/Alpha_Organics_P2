@@ -1,8 +1,12 @@
 package DataAccessLayer;
 
 import entities.Customer;
-import java.sql.*;
 import utilities.DataBaseConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CustomerImp implements CustomerDAO {
 
