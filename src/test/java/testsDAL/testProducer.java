@@ -15,4 +15,10 @@ public class testProducer {
 
     }
 
+    @Test
+    public void selectProducerByIdFailure(){
+        Producer producer = producerDAO.selectProducerId(1);
+        Assert.assertFalse(producer.getProducerId()==-1);
+
+    }
 }

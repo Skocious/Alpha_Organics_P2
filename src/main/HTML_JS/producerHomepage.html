@@ -3,36 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Alpha Organics Producer Homepage</title>
-    <link rl="" stylesheet: href="style.css">
-    <script defer src="producerHomePage.js"></script>
+    <title>Alpha Organic's Producer Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="landingPage.js"></script>
 </head>
 
 <body>
-    <main id="main-holder" div style="text-align: center;" action="employee_homepage.html">
-        <h1 id="welcome-header">Welcome to the Alpha Organics Homepage, {producername}!</h1>
-        <h3 id="welcome-notification" style="text-align: center;">Enter an item then choose a category.</h3>
-        <div style="text-align: center;" class="request">
-            <label for="amount">Enter item: </label>
-            <input type="text" name="item" id="letters" placeholder="Please enter amount." required>
+    <main id="main-holder" div style="text-align: center;" action="producerHomepage.html">
+        <h1 id="welcome-header">Welcome to the Alpha Organics Homepage, {Producername}!</h1>
+        <h3 id="welcome-notification" style="text-align: center;">Please enter Item, Item Description, and Item Price.</h3>
+        <div style="text-align: center;" class="create">
+            <label for="amount">Enter Item: </label>
+            <input type="text" name="item name" id="letters" placeholder="Please enter amount." required>
         </div>
-        <div style="text-align: center;" class="request">
-            <label for="item id">Item description: </label>
-            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
+        <div style="text-align: center;" class="create">
+            <label for="item id">Item Description: </label>
+            <input type="text" name="item description" id="letters" placeholder="Please enter 0 char." required>
         </div>
-        <div style="text-align: center;" class="request">
-            <label for="item id">Item price: </label>
-            <input type="number" name="item id" id="integers" placeholder="Please enter 0 char." required>
+        <div style="text-align: center;" class="create">
+            <label for="item id">Item Price: </label>
+            <input type="number" name="item price" id="integers" placeholder="Please enter 0 char." required>
         </div>
         </select>
-        <div style="text-align: center;" class="request">
+        <div style="text-align: center;" class="create">
             <br>
-            <button id="submitButton" onclick="createReimbursementRequest()">Item Submit</button>
-            <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
+            <button id="submitButton" onclick="createItemById()">Item Submit</button>
+            <!-- <button onclick="currentItemCreateById()">See Items</button> -->
         </div>
         <br>
-        <table id="statusTable">
-            <thead id="reimbTHead">
+        <table id="itemTable">
+            <thead id="itemHead">
                 <tr>
                     <th>Producer Name</th>
                     <th>Item Name</th>
@@ -55,24 +55,13 @@
                     <td>0.59</td>
                 </tr>
             </thead>
-            <tbody id="tableBody">
-                <tr>
-
-                </tr>
-            </tbody>
-            <tfoot id="allbalance">
-                <tr>
-                    <th id="openBalance"></th>
-                    <th>Total Balance Due</th>
-                </tr>
-            </tfoot>
         </table>
 
         <br>
         <div style="text-align: center;" class="request">
             <label for="cancel-req">Cancel Item:</label>
             <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
-            <button id="cancelButton" onclick="cancelReimbursementRequest()">Delete Item</button>
+            <button id="cancelButton" onclick="cancelItemId()">Delete Item</button>
         </div>
 
     </main>
