@@ -10,10 +10,11 @@ table th,
 td {
     text-align: center;
     border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 40px;
+    width: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 table.center {
@@ -22,12 +23,38 @@ table.center {
 
 table th,
 td {
+    text-align: center;
     flex-grow: 1;
     flex-shrink: 0;
 }
 
-body {
+table.left {
+    margin-top: auto;
+}
+
+.myDiv {
+    border: 5px outset red;
+    background-color: lightblue;
     text-align: center;
+}
+
+div.static body {
+    text-align: center;
+}
+
+div.relative {
+    position: relative;
+    left: 30px;
+    border: 3px solid;
+}
+
+div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
 }
 
 section {
