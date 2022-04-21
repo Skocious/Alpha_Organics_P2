@@ -9,11 +9,12 @@ h3 {
 table th,
 td {
     text-align: center;
-    border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 40px;
+    border: 1px solid darkblue;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 table.center {
@@ -22,14 +23,38 @@ table.center {
 
 table th,
 td {
+    text-align: center;
     flex-grow: 1;
     flex-shrink: 0;
 }
 
-body {
+table.left {
+    margin-top: auto;
+}
+
+div.static {
     text-align: center;
+}
+
+div.relative {
+    position: relative;
+    left: 30px;
+    border: 3px solid;
+}
+
+div.sticky {
+    position: sticky;
+    right: 80px;
+    width: 200px;
+    height: 250px;
+    border: 3px solid #73AD21;
 }
 
 section {
     text-align: center;
+}
+
+body {
+    color: darkblue;
+    background-color: darkolivegreen
 }
