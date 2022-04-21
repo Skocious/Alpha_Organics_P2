@@ -18,7 +18,7 @@ public class ItemsController {
 
     public ItemsController(ItemsSO itemsSO) {
         this.itemsSO = itemsSO;
-    }
+    };
 
     public Handler createItems = ctx ->{
         String body = ctx.body();

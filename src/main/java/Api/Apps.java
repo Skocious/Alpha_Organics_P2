@@ -4,17 +4,19 @@ import Api.Controllers.*;
 import DataAccessLayer.*;
 import ServiceAccessLayer.*;
 import io.javalin.Javalin;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Apps {
 
-    public static Logger logger = LogManager.getLogger(App.class);
+    public static Logger logger = LogManager.getLogger(Apps.class);
 
     public static void main(String[] args){
         Javalin app = Javalin.create(config ->{
             config.enableCorsForAllOrigins();
             config.enableDevLogging();
         });
-        Logger.info("Javalin")
+        Logger.info("Javalin object created");
 
         ProducerDAO producerDAO = new ProducerImp();
         ProducerSO producerSO = new ProducerSImp(producerDAO);

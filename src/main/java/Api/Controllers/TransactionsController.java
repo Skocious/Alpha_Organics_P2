@@ -8,8 +8,11 @@ import io.javalin.core.util.Header;
 import io.javalin.http.Handler;
 
 public class TransactionsController {
-    TransactionDAO transactionDAO = new TransactionImp();
-    TransactionSO transactionSO = new TransactionSImp(transactionDAO);
+    public TransactionSO transactionSO;
+
+    public TransactionsController(TransactionSO transactionSO){
+        this.transactionSO = transactionSO;
+    };
 
 
     public Handler createTransaction = ctx ->{
@@ -25,8 +28,9 @@ public class TransactionsController {
         String body = ctx.body();
         Gson gson = new Gson();
         Transaction transaction = gson.fromJson(body, Transaction.class);
-        String jsonString = gson.toJson(transactionSO.serviceGetAllTransactionByCustomerId(Customer.customer_id));
-
+        String jsonString = gson.toJson(transactionSO.serviceGetAllTransactionByCustomerId(Customer.customerId));
+        ctx.result(jsonString);
+        ctx.status(200);
     };
 
     public Handler getAllTransactionsByProducerId = ctx->{
