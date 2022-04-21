@@ -12,10 +12,11 @@ public class LoginSImp implements LoginSO {
 
     @Override
     public Login serviceSelectLoginName(String Username, String Password) {
-        if (Username == Username)
+        if (Username.length() <= 20 &&
+            Password.length() <= 20)
             return this.loginDAO.selectLoginName(Username, Password);
         else {
-            throw new InvalidLogin("Username and/or Password are wrong, please try again.");
+            throw new InvalidLogin("Username and/or Password is wrong, please try again.");
         }
     }
 }
