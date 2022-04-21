@@ -6,11 +6,15 @@ import ServiceAccessLayer.*;
 import io.javalin.Javalin;
 
 public class Apps {
+
+    public static Logger logger = LogManager.getLogger(App.class);
+
     public static void main(String[] args){
         Javalin app = Javalin.create(config ->{
             config.enableCorsForAllOrigins();
             config.enableDevLogging();
         });
+        Logger.info("Javalin")
 
         ProducerDAO producerDAO = new ProducerImp();
         ProducerSO producerSO = new ProducerSImp(producerDAO);
@@ -20,17 +24,15 @@ public class Apps {
         LoginSO loginSO = new LoginSImp(loginDAO);
         LoginControllers loginControllers = new LoginControllers(loginSO);
 
-        ItemsDAO itemsDAO = new ItemsImp();
+        ItemsImp itemsDAO = new ItemsImp();
         ItemsSO itemsSO = new ItemsSImp(itemsDAO);
         ItemsController itemsController = new ItemsController(itemsSO);
 
         TransactionDAO transactionDAO = new TransactionImp();
-        TransactionsSO transactionsSO = new TransactionSImp(transactionDAO);
+        TransactionSO transactionsSO = new TransactionSImp(transactionDAO);
         TransactionsController transactionsController = new TransactionsController(transactionsSO);
 
         app.post("/items", itemsController.createItems);
-
-        app.get("/items/{id}", itemsController.selectItemsById);
 
         app.get("/items", itemsController.selectAllItems);
 
