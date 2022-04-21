@@ -48,7 +48,7 @@ div.relative {
     border: 3px solid;
 }
 
-div.absolute {
+div.sticky {
     position: absolute;
     top: 80px;
     right: 0;
