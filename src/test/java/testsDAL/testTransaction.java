@@ -26,13 +26,13 @@ public class testTransaction {
 
     @Test
     public void getAllTransactionByCustomerIdSuccess() {
-        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(1);
-        Assert.assertEquals(transactions.getCustomerId(), 1);
+        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(3);
+        Assert.assertEquals(transactions.getCustomerId(), 3);
     }
 
     @Test
     public void getAllTransactionByCustomerIdFailure() {
-        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(1);
+        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(3);
         Assert.assertNotEquals(transactions.getCustomerId(), -1);
     }
 
