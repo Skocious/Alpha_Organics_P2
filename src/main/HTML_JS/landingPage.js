@@ -3,7 +3,7 @@ const password = document.getElementById("password-field");
 
 
 
-    async function customerLoginFucntion(){
+    async function customerLoginFunction(){
 
         console.log(id_name.value)
         console.log(password.value)
@@ -14,15 +14,15 @@ const password = document.getElementById("password-field");
         }
         const httpResponse = await fetch("http://127.0.0.1:5000/login", loginCredentials)
         if (httpResponse.status == 200){
-            const httpResponseBpdy = await httpResponse.json()
-            window.localStorage.setItem('login_id', httpResponseBpdy['login_id'])
+            const httpResponseBody = await httpResponse.json()
+            window.localStorage.setItem('login_id', httpResponseBody['login_id'])
             window.location.href = "customerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")
         }
     }
 
-    async function producerLoginFucntion(){
+    async function producerLoginFunction(){
 
         console.log(id_name.value)
         console.log(password.value)
@@ -33,8 +33,8 @@ const password = document.getElementById("password-field");
         }
         const httpResponse = await fetch("http://127.0.0.1:5000/login", loginCredentials)
         if (httpResponse.status == 200){
-            const httpResponseBpdy = await httpResponse.json()
-            window.localStorage.setItem('login_id', httpResponseBpdy['login_id'])
+            const httpResponseBody = await httpResponse.json()
+            window.localStorage.setItem('login_id', httpResponseBody['login_id'])
             window.location.href = "producerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")
