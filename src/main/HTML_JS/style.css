@@ -49,11 +49,10 @@ div.relative {
 }
 
 div.sticky {
-    position: absolute;
-    top: 80px;
-    right: 0;
+    position: sticky;
+    right: 80px;
     width: 200px;
-    height: 100px;
+    height: 250px;
     border: 3px solid #73AD21;
 }
 
