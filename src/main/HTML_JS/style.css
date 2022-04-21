@@ -1,9 +1,15 @@
 h1 {
-    text-align: center;
+    text-align: right;
 }
 
 h3 {
-    text-align: center;
+    text-align: right;
+}
+
+img {
+    position: relative;
+    display: block;
+    border-radius: 50%;
 }
 
 table th,
@@ -51,7 +57,7 @@ div.sticky {
 }
 
 section {
-    text-align: center;
+    text-align: right;
 }
 
 body {
