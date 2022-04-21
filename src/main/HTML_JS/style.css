@@ -9,7 +9,7 @@ h3 {
 table th,
 td {
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid darkblue;
     width: 100px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -32,7 +32,7 @@ table.left {
     margin-top: auto;
 }
 
-div.static body {
+div.static {
     text-align: center;
 }
 
@@ -52,4 +52,9 @@ div.sticky {
 
 section {
     text-align: center;
+}
+
+body {
+    color: darkblue;
+    background-color: darkolivegreen
 }
