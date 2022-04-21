@@ -22,15 +22,15 @@ public class ItemsImp implements ItemsDAO{
         try (Connection connection = DataBaseConnection.createConnection()) {
             String sql = "insert into items values(default, ?, ?, ?, ?) returning item_id";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(2, items.getItem_name());
-            ps.setString(3, items.getItem_description());
+            ps.setString(2, items.getItemName());
+            ps.setString(3, items.getItemDescription());
             //ps.setInt(0, items.getItem_id());
             ps.setFloat(4, items.getPrice());
-            ps.setInt(1, items.getProducer_id());
+            ps.setInt(1, items.getProducerId());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
-            items.setItem_id(rs.getInt("item_id"));
+            items.setItemId(rs.getInt("item_id"));
             return items;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -89,12 +89,13 @@ public class ItemsImp implements ItemsDAO{
     @Override
     public Items updateItemsById(Items items) {
         try (Connection connection = DataBaseConnection.createConnection()) {
-            String sql = "update items set item_name = ? item_description = ? item_price = ? where item_id = ? * ";
+            String sql = "update items set item_name = ?, item_description = ?, price = ? where item_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, items.getItem_name());
-            ps.setString(2, items.getItem_description());
+            //ps.setInt(1, items.getProducer_id());
+            ps.setString(1, items.getItemName());
+            ps.setString(2, items.getItemDescription());
             ps.setFloat(3, items.getPrice());
-            ps.setInt(4, items.getItem_id());
+            ps.setInt(4, items.getItemId());
             if (ps.executeUpdate() != 0) {
                 return items;
             } else {

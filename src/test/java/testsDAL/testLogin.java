@@ -10,13 +10,13 @@ public class testLogin {
 
     @Test
     public void selectLoginId() {
-        Login login = loginDAO.selectLoginId(4, "Hand456", "456art");
-        Assert.assertEquals(login.getLoginId(), 4);
+        Login login = loginDAO.selectLoginName("Hand456", "456art");
+        Assert.assertEquals(login.getUsername(), "Hand456");
     }
 
     @Test
     public void selectLoginIdFailure() {
-        Login login = loginDAO.selectLoginId(4, "Hand456", "456art");
-        Assert.assertFalse(login.getLoginId() == 0);
+        Login login = loginDAO.selectLoginName("Hand456", "456art");
+        Assert.assertFalse(login.getUsername() == "Hand456");
     }
 }

@@ -3,54 +3,54 @@ package entities;
 import java.util.Objects;
 
 public class Items {
-    private int item_id;
-    private int producer_id;
-    private String item_name;
-    private String item_description;
+    private int itemId;
+    private int producerId;
+    private String itemName;
+    private String itemDescription;
     private float price;
 
 
 
     public Items(){}
 
-    public Items(int itemId, int producer_id, String itemName, String itemDescription, float price){
-        this.item_id = itemId;
-        this.producer_id = producer_id;
-        this.item_name = itemName;
-        this.item_description = itemDescription;
+    public Items(int itemId, int producerId, String itemName, String itemDescription, float price){
+        this.itemId = itemId;
+        this.producerId = producerId;
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
         this.price = price;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public int getProducer_id() {
-        return producer_id;
+    public int getProducerId() {
+        return producerId;
     }
 
-    public void setProducer_id(int producer_id) {
-        this.producer_id = producer_id;
+    public void setProducerId(int producerId) {
+        this.producerId = producerId;
     }
 
-    public String getItem_name() {
-        return item_name;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setItem_name(String item_name) {
-        this.item_name = item_name;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public String getItem_description() {
-        return item_description;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setItem_description(String item_description) {
-        this.item_description = item_description;
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
     public float getPrice() {
@@ -66,24 +66,29 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return item_id == items.item_id && producer_id == items.producer_id && Float.compare(items.price, price) == 0 && Objects.equals(item_name, items.item_name) && Objects.equals(item_description, items.item_description);
+        return itemId == items.itemId && producerId == items.producerId && Float.compare(items.price, price) == 0 && itemName.equals(items.itemName) && itemDescription.equals(items.itemDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(item_id, producer_id, item_name, item_description, price);
+        return Objects.hash(itemId, producerId, itemName, itemDescription, price);
     }
 
     @Override
     public String toString() {
         return "Items{" +
-                "item_id=" + item_id +
-                ", producer_id=" + producer_id +
-                ", item_name='" + item_name + '\'' +
-                ", item_description='" + item_description + '\'' +
+                "itemId=" + itemId +
+                ", producerId=" + producerId +
+                ", itemName='" + itemName + '\'' +
+                ", itemDescription='" + itemDescription + '\'' +
                 ", price=" + price +
                 '}';
     }
 }
 
-/* item_name, item_description, item_id, price */
+
+
+
+/* itemName, itemDescription, itemId, price */
+
+
