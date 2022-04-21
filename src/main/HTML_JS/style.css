@@ -32,12 +32,6 @@ table.left {
     margin-top: auto;
 }
 
-.myDiv {
-    border: 5px outset red;
-    background-color: lightblue;
-    text-align: center;
-}
-
 div.static body {
     text-align: center;
 }
