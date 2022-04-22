@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="landingPage.js"></script>
 </head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+</style>
 
 <body>
     <main id="main-holder" div style="text-align: center;" action="producerHomepage.html">
@@ -18,26 +26,26 @@
         <h3 id="welcome-notification" style="text-align: center;">Please enter Item, Item Description, and Item Price.</h3>
         <div style="text-align: center;" class="create">
             <label for="amount">Enter Item: </label>
-            <input type="text" name="item name" id="letters" placeholder="Please enter amount." required>
+            <input type="text" name="item-name" id="item_field" placeholder="Please enter amount." required>
         </div>
         <div style="text-align: center;" class="create">
             <label for="item id">Item Description: </label>
-            <input type="text" name="item description" id="letters" placeholder="Please enter 0 char." required>
+            <input type="text" name="item-description" id="item_description_field" placeholder="Please enter 0 char." required>
         </div>
         <div style="text-align: center;" class="create">
-            <label for="item id">Item Price: </label>
-            <input type="number" name="item price" id="integers" placeholder="Please enter 0 char." required>
+            <label for="item price">Item Price: </label>
+            <input type="number" name="item-price" id="item_price_field" placeholder="Please enter 0 char." required>
         </div>
         </select>
         <div style="text-align: center;" class="create">
             <br>
-            <button id="submitButton" onclick="createItemById()">Item Submit</button>
+            <button id="buy button" onclick="createItem()">Item Submit</button>
             <!-- <button onclick="currentItemCreateById()">See Items</button> -->
         </div>
         <br>
         <section>
-            <table class="center">
-                <thead id="itemHead">
+            <table id="items_table" class="center">
+                <thead id="item_head">
                     <tr>
                         <th>Producer Name</th>
                         <th>Item Name</th>
@@ -45,29 +53,27 @@
                         <th>Item Description</th>
                         <th>Item Price</th>
                     </tr>
-                    <tr>
-                        <td>Weatherman Foods</td>
-                        <td>Oranges</td>
-                        <td>1</td>
-                        <td>Fruit</td>
-                        <td>1.19</td>
-                    </tr>
-                    <tr>
-                        <td>Weatherman Foods</td>
-                        <td>Bananas</td>
-                        <td>1</td>
-                        <td>Fruit</td>
-                        <td>0.59</td>
-                    </tr>
                 </thead>
+                <tbody id="items_body">
+                    <tr>
+
+                    </tr>
+                </tbody>
+                <tfoot id="all_buy">
+                    <tr>
+                        <th id="all_items"></th>
+                    </tr>
+                </tfoot>
             </table>
         </section>
         <br>
         <div style="text-align: center;" class="request">
             <label for="cancel-req">Cancel Item:</label>
-            <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
+            <input type="number" name="cancelReq" id="delete-Item-Request-Field" placeholder="Please enter Item ID." required>
             <button id="cancelButton" onclick="cancelItemId()">Delete Item</button>
         </div>
+        <br>
+        <button onclick="clearStore_return_to_login()">Logout</button>
 
     </main>
 </body>
