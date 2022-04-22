@@ -24,32 +24,19 @@
 //        ctx.status(201);
 //    };
 //
-//    public Handler getAllTransactionsByCustomerId = ctx ->{
+//    public Handler getAllTransactionsByUserName = ctx ->{
 //        String body = ctx.body();
 //        Gson gson = new Gson();
 //        Transaction transaction = gson.fromJson(body, Transaction.class);
-//        String jsonString = gson.toJson(transactionSO.serviceGetAllTransactionByCustomerId(Customer.customerId));
+//        String jsonString = gson.toJson(transactionSO.serviceGetAllTransactionByUsername(Transaction.UserName));
 //        ctx.result(jsonString);
 //        ctx.status(200);
 //    };
 //
-//    public Handler getAllTransactionsByProducerId = ctx->{
-//        String body = ctx.body();
-//        Gson gson = new Gson();
-//        Transaction transaction = gson.fromJson(body, Transaction.class);
-//        String jsonString =gson.toJson(transactionSO.serviceGetAllTransactionByProducerId(Producer.ProducerId));
-//        ctx.result(jsonString);
-//        ctx.status(200);
-//    };
 //
 //    public Header createTransaction = ctx ->{
 //        ctx.result(1, 1, 1, 3.00, 1);
 //        ctx.status(201);
-//    };
-//
-//    public Header getAllTransactionByCustomerId = ctx->{
-//        ctx.result(1, 1, 1, 3.00, 1);
-//        ctx.status(200);
 //    };
 //
 //    public Header getAllTransactionsByProducerId = ctx->{

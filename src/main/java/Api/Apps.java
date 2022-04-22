@@ -16,11 +16,6 @@
 //            config.enableCorsForAllOrigins();
 //            config.enableDevLogging();
 //        });
-//        Logger.info("Javalin object created");
-//
-//        ProducerDAO producerDAO = new ProducerImp();
-//        ProducerSO producerSO = new ProducerSImp(producerDAO);
-//        ProducerControllers producerControllers = new ProducerControllers(producerSO);
 //
 //        LoginDAO loginDAO = new LoginImp();
 //        LoginSO loginSO = new LoginSImp(loginDAO);
@@ -42,16 +37,11 @@
 //
 //        app.delete("/items/{id}", itemsController.deleteItemsById);
 //
-//        app.post("/producer", loginControllers.selectProducerId);
-//
-//        app.post("/customer", LoginControllers.selectCustomerId);
+//        app.post("/customer", loginControllers.selectLoginName);
 //
 //        app.post("/transactions", transactionsController.createTransaction);
 //
-//        app.get("/transactions/{producerId}", transactionsController.getAllTransactionByCustomerId);
+//        app.get("/transactions/{producerId}", transactionsController.getAllTransactionByUserName);
 //
-//        app.get("/transactions/{customerId}", transactionsController.getAllTransactionsByProducerId);
-//
-//        app.get("/producer", producerControllers.getProducerId);
 //    }
 //}
