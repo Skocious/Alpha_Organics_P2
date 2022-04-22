@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Items {
     private int itemId;
-    private int producerId;
+    private String Username;
     private String itemName;
     private String itemDescription;
     private float price;
@@ -13,9 +13,9 @@ public class Items {
 
     public Items(){}
 
-    public Items(int itemId, int producerId, String itemName, String itemDescription, float price){
+    public Items(int itemId, String Username, String itemName, String itemDescription, float price){
         this.itemId = itemId;
-        this.producerId = producerId;
+        this.Username = Username;
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.price = price;
@@ -29,12 +29,12 @@ public class Items {
         this.itemId = itemId;
     }
 
-    public int getProducerId() {
-        return producerId;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setProducerId(int producerId) {
-        this.producerId = producerId;
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public String getItemName() {
@@ -66,29 +66,22 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return itemId == items.itemId && producerId == items.producerId && Float.compare(items.price, price) == 0 && itemName.equals(items.itemName) && itemDescription.equals(items.itemDescription);
+        return itemId == items.itemId && Float.compare(items.price, price) == 0 && Username.equals(items.Username) && itemName.equals(items.itemName) && itemDescription.equals(items.itemDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, producerId, itemName, itemDescription, price);
+        return Objects.hash(itemId, Username, itemName, itemDescription, price);
     }
 
     @Override
     public String toString() {
         return "Items{" +
                 "itemId=" + itemId +
-                ", producerId=" + producerId +
+                ", Username='" + Username + '\'' +
                 ", itemName='" + itemName + '\'' +
                 ", itemDescription='" + itemDescription + '\'' +
                 ", price=" + price +
                 '}';
     }
 }
-
-
-
-
-/* itemName, itemDescription, itemId, price */
-
-
