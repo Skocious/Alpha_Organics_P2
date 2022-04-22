@@ -8,7 +8,7 @@
 //
 //public class ProducerControllers {
 //    public ProducerSO producerSO;
-//    public ProducerControllers(ProducerSO producerSO {
+//    public ProducerControllers(ProducerSO producerSO){
 //        this.producerSO = producerSO;
 //    };
 //
@@ -16,8 +16,8 @@
 //        String body = ctx.body();
 //        Gson gson = new Gson();
 //        Producer producer = gson.fromJson(body, Producer.class);
-//        ProducerSImp.serviceSelectProducerId();
-//        ctx.result();
+//        producerSO.serviceSelectProducerId(producerId);
+//        ctx.result(Producer);
 //        ctx.status(200);
 //    };
 //
