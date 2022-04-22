@@ -80,7 +80,7 @@ public class testItems {
 
     @Test
     public void deleteItemsByIdSuccess(){
-        int items = itemsDAO.deleteItemsById(1);
-        Assert.assertTrue(itemsDAO.deleteItemsById(1) != 1);
+        int items = itemsDAO.deleteItemsById(9);
+        Assert.assertTrue(itemsDAO.deleteItemsById(4) != 4);
     }
 }

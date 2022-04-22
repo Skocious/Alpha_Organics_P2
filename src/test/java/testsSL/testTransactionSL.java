@@ -36,9 +36,9 @@ public class testTransactionSL {
 
     @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
     public void serviceCreateTransactionFailureItemPriceTooHigh(){
-        Transaction transaction = new Transaction(1, "customer1", 10000f, 1);
+        Transaction transaction = new Transaction(1, "customer1", 100000f, 1);
         Transaction result = transactionSO.serviceCreateTransaction(transaction);
-        Assert.assertNotEquals(result.getTransactionAmount(), 10000f);
+        Assert.assertNotEquals(result.getTransactionAmount(), 100000f);
     }
     @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
     public void serviceCreateTransactionPriceNotZeroNoFreebies(){
