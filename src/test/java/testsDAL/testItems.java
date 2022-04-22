@@ -78,10 +78,9 @@ public class testItems {
 //
 //    }
 
-//    @Test
-//    public void deleteItemsByIdSuccess(){
-//        Items items = itemsDAO.deleteItemsById(items);
-//        Assert.;
-//
-//    }
+    @Test
+    public void deleteItemsByIdSuccess(){
+        int items = itemsDAO.deleteItemsById(1);
+        Assert.assertTrue(itemsDAO.deleteItemsById(1) != 1);
+    }
 }
