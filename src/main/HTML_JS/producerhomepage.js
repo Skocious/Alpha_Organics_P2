@@ -31,7 +31,7 @@ function saleTable(returnedInfo){
 
 async function requestItems() {
 
-    let getURL = "http://127.0.0.1:5000/get_all_items_by_login_name/"
+    let getURL = "http://8080/get_all_items_by_login_name/"
 
     let response = await fetch(getURL + login_name, { method: "GET" })
 
@@ -50,7 +50,7 @@ async function createItem(){
 
     let newCreateRequest = {
         "item_id": itemId.value,
-        "login_name": loginName.value,
+        "login_name": userName.value,
         "item_name": itemName.value,
         "item_description":itemDescription.value,
         "price": price.value
@@ -61,7 +61,7 @@ async function createItem(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCreateRequest)
     }
-    let response = await fetch("http://127.0.0.1:5000/create_item_request", newRequest)
+    let response = await fetch("http://8080/create_item_request", newRequest)
     if (response.status === 200) {
         alert("You have successfully created an" + {itemName} + "for sale!")
         totalItemsSale();
@@ -70,13 +70,11 @@ async function createItem(){
         let responseBody = await response.json()
         alert(responseBody.message);   
     }
-     
-
 }
 
 async function deleteItem(){
     let requestCancelID = document.getElementById("delete-Item-Request-Field")
-    let cresponse = await fetch("http://127.0.0.1:5000/delete_item_request/" + requestCancelID.value)
+    let cresponse = await fetch("8080/delete_item_request/" + requestCancelID.value)
     if (cresponse.status === 200) {
         alert("You have successfully deleted" + {itemName})
         totalItemsSale();
@@ -89,7 +87,7 @@ async function deleteItem(){
 
 async function totalItemsSale() {
     let totalItemsTable = document.getElementById("all_items")
-    let bresponse = await fetch("http://127.0.0.1:5000/get_all_items_by_login_name/" + login_name)
+    let bresponse = await fetch("http://8080/get_all_items_by_login_name/" + login_name)
     if (bresponse.status === 200) {
        // console.log(bresponse)
        const value = await bresponse.json()
