@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class testItemsSL {
     public static ItemsImp itemsDAO = new ItemsImp();
     public static ItemsSImp itemsSO = new ItemsSImp(itemsDAO);
-    public static Items testMock = new Items(0, 1, "goat", "browngoat", 99);
+    public static Items testMock = new Items(0, "customer1", "eggs", "free-range", 1.99f);
 
     @BeforeClass
     public void setup() {
@@ -28,35 +28,35 @@ public class testItemsSL {
     @Test
     public void createItemSuccess() {
 
-        Mockito.doReturn(new Items(1, 1, "goat", "browngoat", 99)).when(itemsDAO).createItems(testMock);
+        Mockito.doReturn(new Items(1, "customer1", "eggs", "free-range", 1.99f)).when(itemsDAO).createItems(testMock);
         Items result = itemsSO.serviceCreateItems(testMock);
         Assert.assertEquals(result.getItemId(), 1);
     }
 
     @Test
     public void checkItemsCalledOnce() {
-        Mockito.doReturn(new Items(1, 1, "goat", "browngoat", 99)).when(itemsDAO).createItems(testMock);
+        Mockito.doReturn(new Items(0, "customer1", "eggs", "free-range", 1.99f)).when(itemsDAO).createItems(testMock);
         itemsSO.serviceCreateItems(testMock);
         Mockito.verify(itemsDAO, VerificationModeFactory.times(1)).createItems(testMock);
     }
 
     @Test (expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
     public void invalidItemName() {
-        Items items = new Items(4, 1, "goatsgoatsgoatsgoatsgoats", "browngoat", 99.00F);
+        Items items = new Items(4, "customer1", "goatsgoatsgoatsgoatsgoats", "browngoat", 99.00F);
         Items result = itemsSO.serviceCreateItems(items);
         Assert.assertNotSame(result.getItemName(), "goat");
     }
 
     @Test//(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
     public void invalidItemDescription() {
-        Items items = new Items(1, 1, "goats", "goatsgoatsgoatsgoatsgoatsgoatsgogoatsgoatsgoatsgoatsgoatsatsgoatsgoatsgoats", 99);
+        Items items = new Items(1, "customer1", "goats", "goatsgoatsgoatsgoatsgoatsgoatsgogoatsgoatsgoatsgoatsgoatsatsgoatsgoatsgoats", 99);
         Items result = itemsSO.serviceCreateItems(items);
         Assert.assertNotEquals(result, items);
     }
 
     @Test (expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
     public void invalidPrice() {
-        Items items = new Items(4, 1, "goat", "browngoat", 10000);
+        Items items = new Items(4, "customer1", "goat", "browngoat", 10000);
         Items result = itemsSO.serviceCreateItems(items);
         Assert.assertNotSame(result.getPrice(), "99");
     }

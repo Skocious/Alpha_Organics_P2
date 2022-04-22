@@ -12,40 +12,27 @@ public class testTransaction {
 
     @Test
     public void createTransactionSuccess() {
-        Transaction newTransaction = new Transaction(0, 3, 1, 111, 4);
+        Transaction newTransaction = new Transaction(0, "customer1", 1.99f, 1);
         Transaction resultNewTransaction = transactionDAO.createTransaction(newTransaction);
         Assert.assertNotEquals(resultNewTransaction.getTransactionId(), 0);
     }
 
     @Test
     public void createTransactionFailure() {
-        Transaction newTransaction = new Transaction(0, 3, 1, 111, 4);
+        Transaction newTransaction = new Transaction(0, "customer2", 10000, 1);
         Transaction resultNewTransaction = transactionDAO.createTransaction(newTransaction);
-        Assert.assertNotEquals(resultNewTransaction.getTransactionId(), -1);
+        Assert.assertNotEquals(resultNewTransaction.getTransactionAmount(), 10000);
     }
 
     @Test
-    public void getAllTransactionByCustomerIdSuccess() {
-        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(3);
-        Assert.assertEquals(transactions.getCustomerId(), 3);
+    public void getAllTransactionByUsernameSuccess() {
+        Transaction transactions = transactionDAO.getAllTransactionByUsername("customer1");
+        Assert.assertEquals(transactions.getUsername(), "customer1");
     }
 
-    @Test
-    public void getAllTransactionByCustomerIdFailure() {
-        Transaction transactions = transactionDAO.getAllTransactionByCustomerId(3);
-        Assert.assertNotEquals(transactions.getCustomerId(), -1);
-    }
-
-    @Test
-    public void getAllTransactionByProducerIdSuccess() {
-        Transaction transactions = transactionDAO.getAllTransactionByProducerId(1);
-        Assert.assertEquals(transactions.getProducerId(), 1);
-    }
-
-    @Test
-    public void getAllTransactionByProducerIdFailure() {
-        Transaction transactions = transactionDAO.getAllTransactionByProducerId(1);
-        Assert.assertNotEquals(transactions.getProducerId(), -1);
-
-    }
+//    @Test
+//    public void getAllTransactionByUsernameFailure() {
+//        Transaction transactions = transactionDAO.getAllTransactionByUsername("customer2");
+//        Assert.assertNotEquals(transactions.getUsername(), "customer1");
+//    }
 }

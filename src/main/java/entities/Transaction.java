@@ -4,17 +4,16 @@ import java.util.Objects;
 
 public class Transaction {
     private int transactionId;
-    private int customerId;
-    private int producerId;
+    private String Username;
     private float transactionAmount;
     private int itemId;
 
+
     public Transaction(){}
 
-    public Transaction(int transactionId, int customerId, int producerId, float transactionAmount, int itemId) {
+    public Transaction(int transactionId, String Username, float transactionAmount, int itemId) {
         this.transactionId = transactionId;
-        this.customerId = customerId;
-        this.producerId = producerId;
+        this.Username = Username;
         this.transactionAmount = transactionAmount;
         this.itemId = itemId;
     }
@@ -27,20 +26,12 @@ public class Transaction {
         this.transactionId = transactionId;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public int getProducerId() {
-        return producerId;
-    }
-
-    public void setProducerId(int producerId) {
-        this.producerId = producerId;
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public float getTransactionAmount() {
@@ -64,20 +55,19 @@ public class Transaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return transactionId == that.transactionId && customerId == that.customerId && producerId == that.producerId && Float.compare(that.transactionAmount, transactionAmount) == 0 && itemId == that.itemId;
+        return transactionId == that.transactionId && Float.compare(that.transactionAmount, transactionAmount) == 0 && itemId == that.itemId && Username.equals(that.Username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(transactionId, customerId, producerId, transactionAmount, itemId);
+        return Objects.hash(transactionId, Username, transactionAmount, itemId);
     }
 
     @Override
     public String toString() {
         return "Transaction{" +
                 "transactionId=" + transactionId +
-                ", customerId=" + customerId +
-                ", producerId=" + producerId +
+                ", Username='" + Username + '\'' +
                 ", transactionAmount=" + transactionAmount +
                 ", itemId=" + itemId +
                 '}';

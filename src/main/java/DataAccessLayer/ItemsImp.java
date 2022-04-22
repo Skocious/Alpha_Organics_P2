@@ -26,7 +26,7 @@ public class ItemsImp implements ItemsDAO{
             ps.setString(3, items.getItemDescription());
             //ps.setInt(0, items.getItem_id());
             ps.setFloat(4, items.getPrice());
-            ps.setInt(1, items.getProducerId());
+            ps.setString(1, items.getUsername());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
@@ -48,7 +48,7 @@ public class ItemsImp implements ItemsDAO{
             rs.next();
             Items items = new Items(
                 rs.getInt("item_id"),
-                rs.getInt("producer_id"),
+                rs.getString("login_name"),
                 rs.getString("item_name"),
                 rs.getString("item_description"),
                 rs.getFloat("price")
@@ -71,7 +71,7 @@ public class ItemsImp implements ItemsDAO{
             while (rs.next()) {
                 Items itemList = new Items(
                         rs.getInt("item_id"),
-                        rs.getInt("producer_id"),
+                        rs.getString("login_name"),
                         rs.getString("item_name"),
                         rs.getString("item_description"),
                         rs.getFloat("price")

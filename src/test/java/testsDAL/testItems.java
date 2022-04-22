@@ -21,7 +21,7 @@ public class testItems {
 
     @Test
     public void createItemsSuccess() {
-        Items newItem = new Items(0, 1, "monkey", "chimpanzee", 1000);
+        Items newItem = new Items(0, "customer1", "monkey", "chimpanzee", 1000);
         Items resultNewItems = itemsDAO.createItems(newItem);
         Assert.assertNotEquals(resultNewItems.getItemId(), 0);
 
@@ -36,8 +36,8 @@ public class testItems {
 
     @Test
     public void selectItemsByIdSuccess() {
-        Items items = itemsDAO.selectItemsById(4);
-        Assert.assertEquals(items.getItemId(), 4);
+        Items items = itemsDAO.selectItemsById(1);
+        Assert.assertEquals(items.getItemId(), 1);
     }
 
 //    @Test
@@ -49,7 +49,7 @@ public class testItems {
 
     @Test
     public void updateItemsByIdSuccess() {
-        Items items = new Items(10, 1, "grape", "gala", 2);
+        Items items = new Items(10, "customer1", "grape", "gala", 2);
         Items result = itemsDAO.updateItemsById(items);
         Assert.assertTrue(items.getItemName() == "grape");
     }
@@ -78,10 +78,9 @@ public class testItems {
 //
 //    }
 
-//    @Test
-//    public void deleteItemsByIdSuccess(){
-//        Items items = itemsDAO.deleteItemsById(items);
-//        Assert.;
-//
-//    }
+    @Test
+    public void deleteItemsByIdSuccess(){
+        int items = itemsDAO.deleteItemsById(9);
+        Assert.assertTrue(itemsDAO.deleteItemsById(4) != 4);
+    }
 }

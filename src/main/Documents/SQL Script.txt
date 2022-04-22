@@ -1,0 +1,33 @@
+create table login(
+	login_id serial,
+	login_name varchar(20) unique primary key,
+	pw varchar(20)
+);
+
+create table transaction(
+	transaction_id serial primary key,
+	login_name varchar(20),
+	transaction_amount dec(15,2),
+	item_id int,
+	constraint transaction_foreign_item_id foreign key(item_id) references items(item_id)
+);
+
+create table items(
+	item_id serial primary key,
+	login_name varchar(20),
+	item_name varchar(20),
+	item_description varchar(100),
+	price dec(7,2) not null check(price<=9999.00),
+	constraint login_foreign_key foreign key(login_name) references login(login_name)
+);
+
+
+INSERT INTO login values(default, 'customer1', 'one111');
+insert into login values(default, 'customer2', 'two222');
+insert into login values(default, 'customer3', 'three333');
+insert into login values(default, 'producer1', '111one');
+insert into login values(default, 'producer2', '222two');
+insert into login values(default, 'producer3', '333three');
+
+--TRUNCATE TABLE items RESTART IDENTITY CASCADE;
+--TRUNCATE TABLE transaction RESTART IDENTITY CASCADE;
