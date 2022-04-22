@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemsSImp implements ItemsSO{
     public ItemsDAO itemsDAO;
 
-    public ItemsSImp(ItemsDAO itemsDAO) {
+    public ItemsSImp(DataAccessLayer.ItemsImp itemsDAO) {
         this.itemsDAO = itemsDAO;
     }
 
