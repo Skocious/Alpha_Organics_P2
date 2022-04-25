@@ -8,5 +8,5 @@ public interface TransactionSO {
 
     Transaction serviceCreateTransaction(Transaction transaction);
 
-    Transaction serviceGetAllTransactionByUsername(String Username);
+    List<Transaction> serviceGetAllTransactionByUsername(String Username);
 }

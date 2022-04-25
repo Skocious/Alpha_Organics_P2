@@ -26,8 +26,8 @@ public class testTransaction {
 
     @Test
     public void getAllTransactionByUsernameSuccess() {
-        Transaction transactions = transactionDAO.getAllTransactionByUsername("customer1");
-        Assert.assertEquals(transactions.getUsername(), "customer1");
+        List<Transaction> transaction = transactionDAO.getAllTransactionByUsername("customer1");
+        Assert.assertTrue(transaction.size() >= 1);
     }
 
 //    @Test

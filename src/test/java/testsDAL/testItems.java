@@ -70,17 +70,17 @@ public class testItems {
 
     }
 
-//    @Test
-//    public void getAllItemsByIdFailure() {
-//        List<Items> items = itemsDAO.selectAllItems();
-//        int listLength = items.size();
-//        Assert.assertFalse(items.size() <= 0);
-//
-//    }
-
     @Test
-    public void deleteItemsByIdSuccess(){
-        int items = itemsDAO.deleteItemsById(1);
-        Assert.assertTrue(items != 0);
+    public void getAllItemsByIdFailure() {
+        List<Items> items = itemsDAO.selectAllItems();
+        int listLength = items.size();
+        Assert.assertFalse(items.size() <= 0);
+
     }
+
+//    @Test
+//    public void deleteItemsByIdSuccess(){
+//        int items = itemsDAO.deleteItemsById(1);
+//        Assert.assertTrue(items != 0);
+//    }
 }

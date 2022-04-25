@@ -8,6 +8,6 @@ public interface TransactionDAO {
 
     Transaction createTransaction(Transaction transaction);
 
-    Transaction getAllTransactionByUsername(String Username);
+    List<Transaction> getAllTransactionByUsername(String Username);
 
 }
