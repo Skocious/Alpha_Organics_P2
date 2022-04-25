@@ -25,8 +25,8 @@
 //        Gson gson = new Gson();
 //        Items items = gson.fromJson(body, Items.class);
 //        logger.info("Attempting to add item to inventory");
-//        itemsSO.serviceCreateItems(items);
-//        ctx.result("Item added to inventory");
+//        String jsonString = gson.toJson(itemsSO.serviceCreateItems(items));
+//        ctx.result(jsonString);
 //        ctx.status(201);
 //        logger.info("Item added to inventory");
 //    };
