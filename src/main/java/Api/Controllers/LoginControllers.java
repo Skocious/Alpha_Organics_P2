@@ -3,6 +3,7 @@
 //import DataAccessLayer.*;
 //import ServiceAccessLayer.*;
 //import com.google.gson.Gson;
+//import customExceptions.InvalidLogin;
 //import entities.*;
 //import io.javalin.core.util.Header;
 //import io.javalin.http.Handler;
@@ -23,7 +24,7 @@
 //            loginSO.serviceSelectLoginName(login.getUsername(), login.getPassword());
 //            ctx.result();
 //            ctx.status(201);
-//        } catch (FailedLoginException e){
+//        } catch (InvalidLogin e){
 //            ctx.result(e.getMessage());
 //            ctx.status(400);
 //        };

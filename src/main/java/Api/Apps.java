@@ -43,5 +43,14 @@
 //
 //        app.get("/transactions/{producerId}", transactionsController.getAllTransactionByUserName);
 //
+//        app.post("/items", itemsController.mockCreateItems);
+//
+//        app.get("/items", itemsController.mockSelectAllItems);
+//
+//        app.put("/items", itemsController.mockUpdateItemsBYId);
+//
+//        app.delete("/items/{id}", itemsController.mockDeleteItemsById);
+//
+//
 //    }
 //}
