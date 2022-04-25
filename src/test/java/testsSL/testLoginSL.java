@@ -32,7 +32,6 @@ public class testLoginSL {
     public void serviceLoginIdNotInDB(){
         Mockito.doThrow(new InvalidLogin("Please enter a valid loginId")).when(loginDAO).selectLoginName(testMock.getUsername(), testMock.getPassword());
         Login result = loginSO.serviceSelectLoginName(testMock.getUsername(), testMock.getPassword());
-//        Assert.assertNotEquals("customer1", "customer2");
     }
 
 // login fail no password

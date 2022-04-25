@@ -16,7 +16,8 @@ public class Apps {
         Javalin app = Javalin.create(config -> {
             config.enableCorsForAllOrigins();
             config.enableDevLogging();
-        });
+        }).start();
+
 
         LoginDAO loginDAO = new LoginImp();
         LoginSO loginSO = new LoginSImp(loginDAO);
