@@ -21,7 +21,7 @@
 //        Login login = gson.fromJson(body, Login.class);
 //        try {
 //            loginSO.serviceSelectLoginName(login.getUsername(), login.getPassword());
-//            ctx.result();
+//            ctx.result(Username).status;
 //            ctx.status(201);
 //        } catch (FailedLoginException e){
 //            ctx.result(e.getMessage());

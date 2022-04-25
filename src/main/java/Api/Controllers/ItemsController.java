@@ -53,7 +53,7 @@
 //        String body = ctx.body();
 //        Gson gson = new Gson();
 //        Items items = gson.fromJson(body, Items.class);
-//        itemsSO.serviceDeleteItemsById(items.getItem_id());
+//        itemsSO.serviceDeleteItemsById(items.getItemId());
 //        ctx.result("Item deleted");
 //        ctx.status(200);
 //    };
@@ -63,7 +63,7 @@
 //        ctx.status(200);
 //    };
 //
-//    public Header selectItemsById = ctx ->{
+//    public Header selectAllItems = ctx ->{
 //        ctx.result(4, 1, "goat", "brown goat", 99.99);
 //        ctx.status(200);
 //    };
