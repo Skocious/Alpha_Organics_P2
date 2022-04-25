@@ -52,15 +52,15 @@ public class testTransactionSL {
     }
 //    @Test
 //    public void serviceGetAllTransactionByUserNameSuccess(){
-//        Mockito.doReturn(listMock).when(transactionDAO).getAllTransactionByUsername("customer1");
-//        List<Transaction> resultList = transactionSO.serviceGetAllTransactionByUsername("customer1");
+//        Mockito.doReturn(listMock).when(transactionDAO).getAllTransactionByUsername();
+//        List<Transaction> resultList = transactionSO.serviceGetAllTransactionByUsername();
 //        Assert.assertTrue(resultList.size() >= 1);
 //
 //    }
 
-//    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
-//    public void getAllTransactionByUsernameFailureNoUsername() {
-//        Transaction transactions = transactionSO.serviceGetAllTransactionByUsername("customer4");
-//        Assert.assertNotEquals(transactions.getUsername(), "customer1");
-//    }
+    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
+    public void getAllTransactionByUsernameFailureNoUsername() {
+        Transaction transactions = transactionSO.serviceGetAllTransactionByUsername("customer4");
+        Assert.assertNotEquals(transactions.getUsername(), "customer1");
+    }
 }

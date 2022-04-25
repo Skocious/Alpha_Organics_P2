@@ -86,18 +86,18 @@ public class testItemsSL {
         Assert.fail();
     }
 
-//    @Test
-//    public void serviceSelectAllItemsSuccess(){
-//        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
-//        List<Items> resultList = itemsSO.serviceSelectAllItems();
-//        Assert.assertTrue(resultList.size() >= 1); //was assertTrue this needs to be changed again
-//    }
-//    @Test
-//    public void serviceSelectAllItemsFailure(){
-//        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
-//        List<Items> resultList = itemsSO.serviceSelectAllItems();
-//        Assert.assertFalse(resultList.size() >= 1);
-//    }
+    @Test
+    public void serviceSelectAllItemsSuccess(){
+        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
+        List<Items> resultList = itemsSO.serviceSelectAllItems();
+        Assert.assertTrue(resultList.size() != 1);
+    }
+    @Test
+    public void serviceSelectAllItemsFailure(){
+        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
+        List<Items> resultList = itemsSO.serviceSelectAllItems();
+        Assert.assertFalse(resultList.size() >= 1);
+    }
     @Test
     public void serviceUpdateItemsByItemIdSuccess(){
         Mockito.doReturn(new Items(0, "customer2", "Grapes", "red seedless grapes", 2)).when(itemsDAO).updateItemsById(testMock);
