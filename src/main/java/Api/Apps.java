@@ -37,11 +37,11 @@
 //
 //        app.delete("/items/{id}", itemsController.deleteItemsById);
 //
-//        app.post("/customer", loginControllers.selectLoginName);
+//        app.post("/username", loginControllers.selectLoginName);
 //
 //        app.post("/transactions", transactionsController.createTransaction);
 //
-//        app.get("/transactions/{producerId}", transactionsController.getAllTransactionByUserName);
+//        app.get("/transactions/{username}", transactionsController.getAllTransactionsByUserName);
 //
 //    }
 //}
