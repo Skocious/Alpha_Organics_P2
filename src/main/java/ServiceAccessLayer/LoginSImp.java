@@ -10,18 +10,35 @@ public class LoginSImp implements LoginSO {
         this.loginDAO = loginDAO;
     }
 
+//    @Override
+//    public Login serviceSelectLoginName(String Username, String Password) {
+//        if (Username.length() <= 20 &&
+//            Password.length() <= 20)
+//            return this.loginDAO.selectLoginName(Username, Password);
+//        else {
+//            throw new InvalidLogin("Username and/or Password is wrong, please try again.");
+//        }
+//    }
+
     @Override
     public Login serviceSelectLoginName(String Username, String Password) {
+        Login l;
         if (Username.length() <= 20 &&
-            Password.length() <= 20)
-            return this.loginDAO.selectLoginName(Username, Password);
+                Password.length() <= 20)
+            l = this.loginDAO.selectLoginName(Username, Password);
         else {
             throw new InvalidLogin("Username and/or Password is wrong, please try again.");
         }
+        if (l.getUsername() != null)
+            return l;
+        else {
+            throw new InvalidLogin("Username and/or Password is wrong, please try again.");
+
+        }
+
     }
+
 }
-
-
 
 
 

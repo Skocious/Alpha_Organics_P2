@@ -36,8 +36,8 @@ public class testItems {
 
     @Test
     public void selectItemsByIdSuccess() {
-        Items items = itemsDAO.selectItemsById(1);
-        Assert.assertEquals(items.getItemId(), 1);
+        Items items = itemsDAO.selectItemsById(2);
+        Assert.assertEquals(items.getItemId(), 2);
     }
 
 //    @Test
@@ -80,7 +80,7 @@ public class testItems {
 
     @Test
     public void deleteItemsByIdSuccess(){
-        int items = itemsDAO.deleteItemsById(9);
-        Assert.assertTrue(itemsDAO.deleteItemsById(4) != 4);
+        int items = itemsDAO.deleteItemsById(1);
+        Assert.assertTrue(items != 0);
     }
 }

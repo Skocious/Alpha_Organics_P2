@@ -26,13 +26,15 @@
 
         <body>
             <div>
-                <table class="center">
+                <table id="items_table">
                     <tr>
+                        <th>Item Id</th>
+                        <th>Producer Name</th>
                         <th>Item Name</th>
                         <th>Item Description</th>
                         <th>Item Price</th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>Grapes</td>
                         <td>Fruit</td>
                         <td>3.99</td>
@@ -111,59 +113,55 @@
                         <td>Secret Deoderant</td>
                         <td>Personal Item</td>
                         <td>2.99</td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
             <br>
             <br>
-            <table id="left">
-                <tr>
-                    <th>Item Name</th>
-                    <th>Item Description</th>
-                    <th>Item Price</th>
-                </tr>
-                <tr>
-                    <td>Grapes</td>
-                    <td>Fruit</td>
-                    <td>3.99</td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <div class="sticky">
-                <table>
+            <div>
+                <table id="cart">
                     <tr>
+                        <th>Item Id</th>
+                        <th>Producer Name</th>
                         <th>Item Name</th>
                         <th>Item Description</th>
                         <th>Item Price</th>
                     </tr>
                     <tr>
-                        <td>Grapes</td>
-                        <td>Fruit</td>
-                        <td>3.99</td>
+                        
                     </tr>
-                    <tr>
-                        <td>Grapes</td>
-                        <td>Fruit</td>
-                        <td>3.99</td>
-                    </tr>
-                    <tr>
-                        <td>Kellog's Captain Crunch</td>
-                        <td>"Cereal- Box"</td>
-                        <td>4.59</td>
-                    </tr>
-                    <tr>
-                        <td>Spatula</td>
-                        <td>Utensil</td>
-                        <td>1.99</td>
-                    </tr>
-                    <tr>
-                        <td>Secret Deoderant</td>
-                        <td>Personal Item</td>
-                        <td>2.99</td>
-                    </tr>
+                   
                 </table>
             </div>
+            <br>
+            <br>
+            <table id="producer_transaction_table">
+                <tbody id="producer_body">
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Producer Name</th>
+                    <th>Item Price</th>
+                    <th>Item ID</th>
+                </tr>
+                <tr>
+                    
+                </tr>
+                </tbody>
+            </table>
         </body>
-
+        <body>
+            <main>
+            <section>
+                <input type="int" name="item_id" id="item-id-field" class="item-cart-form-field" placeholder="Item ID" />
+                
+        
+                <button id="addToCartButton" onclick="addToCart()">Add to Cart</button>
+        
+                <div id="login-error-msg-holder">
+                    <p id="login-error-msg">
+                        Please enter the id of the Item you would like to purchase here:
+                        <!-- <span id="error-msg-second-line">and/or password</span> -->
+                    </p>
+                </div>
+            </section>
 </html>

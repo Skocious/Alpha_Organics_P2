@@ -9,10 +9,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class testTransactionSL {
     public static TransactionImp transactionDAO = new TransactionImp();
     public static TransactionSImp transactionSO = new TransactionSImp(transactionDAO);
     public static Transaction testMock = new Transaction(1, "customer1", 100f, 1);
+    public static List<Transaction> listMock = new ArrayList<Transaction>();
 
     @BeforeClass
     public void setup() {
@@ -46,10 +50,17 @@ public class testTransactionSL {
         Transaction result = transactionSO.serviceCreateTransaction(transaction);
         Assert.assertNotEquals(0, 1f);
     }
-
-//    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
-//    public void getAllTransactionByUsernameFailureNoUsername() {
-//        Transaction transactions = transactionSO.serviceGetAllTransactionByUsername("customer4");
-//        Assert.assertNotEquals(transactions.getUsername(), "customer1");
+//    @Test
+//    public void serviceGetAllTransactionByUserNameSuccess(){
+//        Mockito.doReturn(listMock).when(transactionDAO).getAllTransactionByUsername();
+//        List<Transaction> resultList = transactionSO.serviceGetAllTransactionByUsername();
+//        Assert.assertTrue(resultList.size() >= 1);
+//
 //    }
+
+    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
+    public void getAllTransactionByUsernameFailureNoUsername() {
+        Transaction transactions = transactionSO.serviceGetAllTransactionByUsername("customer4");
+        Assert.assertNotEquals(transactions.getUsername(), "customer1");
+    }
 }

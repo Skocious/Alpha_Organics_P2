@@ -25,12 +25,14 @@ public class testLoginSL {
         Login result = loginSO.serviceSelectLoginName(testMock.getUsername(), testMock.getPassword());
         Assert.assertEquals(result.getUsername(), "customer1");
     }
-//    @Test
-//    public void serviceLoginIdNotInDB(Login login){
-//        Mockito.doReturn(new Login("customer4", "pw")).when(loginDAO).selectLoginName(testMock.getUsername(), testMock.getPassword());
+    @Test
+    public void serviceLoginIdNotInDB(){
+        Login login = new Login("customer100", "one111");
+        Login result = loginSO.serviceSelectLoginName(login.getUsername(), login.getPassword());
+        //        Mockito.doReturn(new Login("customer4", "pw")).when(loginDAO).selectLoginName(testMock.getUsername(), testMock.getPassword());
 //        Login result = loginSO.serviceSelectLoginName(testMock.getUsername(), testMock.getPassword());
-//        Assert.assertNotEquals(result.getUsername(), "customer4");
-//    }
+        Assert.assertNotEquals(result.getUsername(), "customer100");
+    }
 
 
 
