@@ -65,13 +65,13 @@ public class ItemsSImp implements ItemsSO {
 
     @Override
     public Items serviceUpdateItemsById(Items items) {
-        if (items.getItemName().length() <= 20) {
+        if (items.getItemName().length() > 20) {
             throw new InvalidId("Item Name too long");
-        } else if (items.getItemDescription().length() <= 100) {
+        } else if (items.getItemDescription().length() > 100) {
             throw new InvalidId("Item description too long");
-        } else if (items.getPrice() <= 9999) {
+        } else if (items.getPrice() > 9999) {
             throw new InvalidId("Item price is too high");
-        } else if (items.getPrice() != 0) {
+        } else if (items.getPrice() >= 0) {
             throw new InvalidId("we dont offer free");
         }else
              {
