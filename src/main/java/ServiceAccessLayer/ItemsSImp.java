@@ -71,7 +71,7 @@ public class ItemsSImp implements ItemsSO {
             throw new InvalidId("Item description too long");
         } else if (items.getPrice() > 9999) {
             throw new InvalidId("Item price is too high");
-        } else if (items.getPrice() >= 0) {
+        } else if (items.getPrice() <= 0) {
             throw new InvalidId("we dont offer free");
         }else
              {
