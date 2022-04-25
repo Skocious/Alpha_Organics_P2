@@ -12,14 +12,14 @@ public class testTransaction {
 
     @Test
     public void createTransactionSuccess() {
-        Transaction newTransaction = new Transaction(0, "customer1", 1.99f, 1);
+        Transaction newTransaction = new Transaction(0, "customer1", 1.99f, 2);
         Transaction resultNewTransaction = transactionDAO.createTransaction(newTransaction);
         Assert.assertNotEquals(resultNewTransaction.getTransactionId(), 0);
     }
 
     @Test
     public void createTransactionFailure() {
-        Transaction newTransaction = new Transaction(0, "customer2", 10000, 1);
+        Transaction newTransaction = new Transaction(0, "customer2", 10000, 2);
         Transaction resultNewTransaction = transactionDAO.createTransaction(newTransaction);
         Assert.assertNotEquals(resultNewTransaction.getTransactionAmount(), 10000);
     }
