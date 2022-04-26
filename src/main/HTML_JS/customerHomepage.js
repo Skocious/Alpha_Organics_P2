@@ -31,6 +31,9 @@ function saleTable(returnedInfo){
     }
 }
 
+
+
+
 async function requestItems() {
 
     let getURL = "http://localhost:8080/items/"
@@ -43,7 +46,7 @@ async function requestItems() {
         let responseBody = await response.json()
         alert(responseBody.message);
     }
-
+}
 
 
 // function addToCart(){
@@ -65,11 +68,11 @@ async function buyItem(){
         "transaction_amount": tItemAmount.value,
         "item_id": itemId.value
     }
-    console.log(newPurchaseRequest)
+    console.log(newTransactionRequest)
     let newRequest = {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(newCreateRequest)
+        body: JSON.stringify(newTransactionRequest)
     }
     let response = await fetch("http://localhost:8080/transactions", newRequest)
     if (response.status === 200) {
@@ -83,13 +86,13 @@ async function buyItem(){
 }
 async function totalItemsSale() {
     let totalItemsTable = document.getElementById("producer_body")
-    let bresponse = await fetch("http://localhost:8080//transactions/" + "producer1")
+    let bresponse = await fetch("http://localhost:8080//transactions/" + "customer1")
     if (bresponse.status === 200) {
         console.log(bresponse)
         const value = await bresponse.json()
         totalItemsTable.textContent = value
         
-        //totalItemsSale();
+        totalItemsSale();
         console.log(value)
        
   } else if (bresponse.status === 400) {
@@ -98,12 +101,10 @@ async function totalItemsSale() {
     }
 }
 
+
 function clearStore_return_to_login() {
     window.localStorage.clear();
     window.location.href = "landingPage.html";
 }
-
-
-}
-//totalItemsSale();
+totalItemsSale();
 requestItems();

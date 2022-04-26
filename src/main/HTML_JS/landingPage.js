@@ -1,5 +1,7 @@
 const id_name = document.getElementById("username-field");
 const password = document.getElementById("password-field");
+const pid_name = document.getElementById("pusername-field");
+const ppassword = document.getElementById("ppassword-field");
 
 
 
@@ -30,12 +32,12 @@ const password = document.getElementById("password-field");
 
     async function producerLoginFunction(){
 
-        console.log(id_name.value)
-        console.log(password.value)
+        console.log(pid_name.value)
+        console.log(ppassword.value)
         
         let loginInfoJSON = {
-            "Username": id_name.value,
-            "Password": password.value
+            "Username": pid_name.value,
+            "Password": ppassword.value
         }
 
         let loginCredentials = {

@@ -59,7 +59,7 @@ async function createItem(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCreateRequest)
     }
-    let response = await fetch("http://8080/create_item_request", newRequest)
+    let response = await fetch("http://localhost:8080/create_item_request", newRequest)
     if (response.status === 200) {
         alert("You have successfully created an" + {itemName} + "for sale!")
         totalItemsSale();
@@ -72,7 +72,8 @@ async function createItem(){
 
 async function deleteItem(){
     let requestCancelID = document.getElementById("delete-Item-Request-Field")
-    let cresponse = await fetch("8080/delete_item_request/" + requestCancelID.value)
+    let cresponse = await fetch("http://localhost:8080/" + "requestCancelID.value")
+    console.log(requestCancelID);
     if (cresponse.status === 200) {
         alert("You have successfully deleted" + {itemName})
         totalItemsSale();
@@ -85,7 +86,7 @@ async function deleteItem(){
 
 async function totalItemsSale() {
     let totalItemsTable = document.getElementById("all_items")
-    let bresponse = await fetch("http://8080/get_all_items_by_login_name/" + login_name)
+    let bresponse = await fetch("http://localhost:8080/get_all_items_by_login_name/" + login_name)
     if (bresponse.status === 200) {
        // console.log(bresponse)
        const value = await bresponse.json()
