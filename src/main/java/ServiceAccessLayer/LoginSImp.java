@@ -3,8 +3,6 @@ import DataAccessLayer.LoginDAO;
 import customExceptions.InvalidLogin;
 import entities.Login;
 
-import javax.swing.*;
-
 public class LoginSImp implements LoginSO {
     LoginDAO loginDAO;
 
