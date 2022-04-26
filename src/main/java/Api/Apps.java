@@ -4,13 +4,13 @@ import Api.Controllers.*;
 import DataAccessLayer.*;
 import ServiceAccessLayer.*;
 import io.javalin.Javalin;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class Apps {
 
-//    public static Logger logger = LogManager.getLogger(Apps.class);
+    public static Logger logger = LogManager.getLogger(Apps.class);
 
     public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
@@ -45,18 +45,17 @@ public class Apps {
 
         app.get("/transactions/{username}", transactionsController.getAllTransactionsByUserName);
 
-        //app.post("/items", itemsController.mockCreateItems);
+        app.post("/items", itemsController.mockCreateItems);
 
 
-//        app.get("/items", itemsController.mockSelectAllItems);
-//
-//        app.put("/items", itemsController.mockUpdateItemsBYId);
-//
-//        app.delete("/items/{id}", itemsController.mockDeleteItemsById);
-//
-//
-//    }
-//}
+        app.get("/items", itemsController.mockSelectAllItems);
+
+        app.put("/items", itemsController.mockUpdateItemsBYId);
+
+        app.delete("/items/{id}", itemsController.mockDeleteItemsById);
+
 
     }
 }
+
+
