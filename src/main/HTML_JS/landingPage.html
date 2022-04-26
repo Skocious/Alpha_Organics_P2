@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <div>
-    <center><img src="C:\Users\Owner\Desktop\Alpha_Organics_P2\src\main\HTML_JS" alt="Alpha Organics logo" height="164" width="165" max-width:50%; max-height:50%;></center>
+    <center>
+        <img src="Alpha_Organics_P2\src\main\HTML_JS" alt="Alpha Organics logo" height="164" width="165" max-width:50%; max-height:50%; />
+    </center>
 </div>
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, inital-scale =1.0" />
     <title>Alpha Organics</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="landingPage.js"></script>
 </head>
 
-
 <body>
-    <main id="main-holder" div style="text-align: center;" action="customerHomepage.html">
+    <main id="main-holder" div style="text-align: center" action="customerHomepage.html">
         <h1 id="login-header">Alpha Organics Cutomer Account Login</h1>
-        <br>
-        <br>
+        <br />
+        <br />
         <section>
             <div id="login-error-msg-holder">
                 <p id="login-error-msg">
@@ -31,27 +32,31 @@
 
 <body>
     <main>
-    <section>
-        <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Customer ID" />
-        <br />
-        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
+        <section>
+            <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Customer ID" />
+            <br />
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
 
-        <button id="customerLoginButton" onclick="customerLoginFunction()">Customer Login</button>
+            <button id="customerLoginButton" onclick="customerLoginFunction()">
+          Customer Login
+        </button>
 
-        <div id="login-error-msg-holder">
-            <p id="login-error-msg">
-                Please enter your Producer Login Credentials here
-                <!-- <span id="error-msg-second-line">and/or password</span> -->
-            </p>
-        </div>
-    </section>
-    <section>
-        <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Producer ID" />
-        <br />
-        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
+            <div id="login-error-msg-holder">
+                <p id="login-error-msg">
+                    Please enter your Producer Login Credentials here
+                    <!-- <span id="error-msg-second-line">and/or password</span> -->
+                </p>
+            </div>
+        </section>
+        <section>
+            <input type="text" name="id_name" id="username-field" class="login-form-field" placeholder="Producer ID" />
+            <br />
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" />
 
-        <button id="producerLoginButton" onclick="producerLoginFunction()">Producer Login</button>
-    </section>
+            <button id="producerLoginButton" onclick="producerLoginFunction()">
+          Producer Login
+        </button>
+        </section>
     </main>
 </body>
 
