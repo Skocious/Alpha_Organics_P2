@@ -31,11 +31,13 @@ public class Apps {
         TransactionSO transactionsSO = new TransactionSImp(transactionDAO);
         TransactionsController transactionsController = new TransactionsController(transactionsSO);
 
-        app.post("/items", itemsController.createItems);
+        app.post("/items", itemsController.createItems); //Fail
 
-        app.get("/items", itemsController.selectAllItems);
+        // app.get("/items", itemsController.selectItemsByUsername); //Non Existent
 
-        app.put("/items", itemsController.updateItemsById);
+        app.get("/items", itemsController.selectAllItems); //Good Postman Test
+
+        app.put("/items", itemsController.updateItemsById); //Fail
 
         app.delete("/items/{id}", itemsController.deleteItemsById);
 

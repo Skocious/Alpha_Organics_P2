@@ -43,8 +43,8 @@ public class ItemsController {
     public Handler updateItemsById = ctx ->{
         String body = ctx.body();
         Gson gson = new Gson();
-        Items items = gson.fromJson(body, Items.class);
-        itemsSO.serviceUpdateItemsById(items);
+        Items item = gson.fromJson(body, Items.class);
+        itemsSO.serviceUpdateItemsById(item);
         ctx.result("Item updated");
         ctx.status(200);
     };
