@@ -31,9 +31,10 @@ function saleTable(returnedInfo){
 
 async function requestItems() {
 
-    let getURL = "http://127.0.0.1:5000/get_all_items_by_login_name/"
+    let getURL = "http://localhost:8080/items/"
 
-    let response = await fetch(getURL + login_name, { method: "GET" })
+    // let response = await fetch(getURL + login_name, { method: "GET" })
+    let response = await fetch(getURL, { method: "GET" })
 
     if (response.status === 200) {
         let returnedInfo = await response.json();
@@ -58,7 +59,7 @@ async function buyItem(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCreateRequest)
     }
-    let response = await fetch("http://8080/create_item_request", newRequest)
+    let response = await fetch("http://localhost:8080/transactions", newRequest)
     if (response.status === 200) {
         alert("Thank you for your purchase, your items are ready for pickup!")
         totalItemsSale();
@@ -70,7 +71,7 @@ async function buyItem(){
 }
 async function totalItemsSale() {
     let totalItemsTable = document.getElementById("all_items")
-    let bresponse = await fetch("http://8080/get_all_items_by_login_name/" + login_name)
+    let bresponse = await fetch("http://localhost:8080//transactions/" + login_name)
     if (bresponse.status === 200) {
        // console.log(bresponse)
        const value = await bresponse.json()

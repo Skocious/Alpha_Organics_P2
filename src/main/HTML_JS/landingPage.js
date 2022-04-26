@@ -34,7 +34,7 @@ const password = document.getElementById("password-field");
         const httpResponse = await fetch("http://127.0.0.1:5000/login", loginCredentials)
         if (httpResponse.status == 200){
             const httpResponseBody = await httpResponse.json()
-            window.localStorage.setItem('login_id', httpResponseBody['login_id'])
+            window.localStorage.setItem('login_name', httpResponseBody['login_name'])
             window.location.href = "producerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")

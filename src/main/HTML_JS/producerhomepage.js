@@ -31,10 +31,10 @@ function saleTable(returnedInfo){
 
 async function requestItems() {
 
-    let getURL = "http://8080/get_all_items_by_login_name/"
+    let getURL = "http://localhost:8080/items/"
 
-    let response = await fetch(getURL + login_name, { method: "GET" })
-
+    // let response = await fetch(getURL + login_name, { method: "GET" })
+    let response = await fetch(getURL, { method: "GET" })
     if (response.status === 200) {
         let returnedInfo = await response.json();
        // console.log(returnedInfo);
