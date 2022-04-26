@@ -24,7 +24,7 @@
         <br>
         <br>
 
-        <body>
+        <section></section>
             <div>
                 <h3 id="marketplace-header" style="text-align": center;>Alpha Organics Marketplace</h3>
                 <table id="items_table">
@@ -47,7 +47,18 @@
             <br>
             <br>
             <section>
-            <div>
+            <input type="int" name="item_id" id="item-id-field" class="item-cart-form-field" placeholder="Item ID" />
+                
+        
+                <button id="addToCartButton" onclick="addToCart()">Add to Cart</button>
+                <button id="BuyItems" onclick="buyItems()">Buy</button>
+                <div id="login-error-msg-holder">
+                    <p id="login-error-msg">
+                        Please enter the id of the Item you would like to purchase here:
+                        <!-- <span id="error-msg-second-line">and/or password</span> -->
+                    </p>
+                </div>
+                <div>
                 <table id="cart">
                     <tr>
                         <th>Item Id</th>
@@ -64,17 +75,7 @@
 
             </div>
             <br>
-            <input type="int" name="item_id" id="item-id-field" class="item-cart-form-field" placeholder="Item ID" />
-                
-        
-                <button id="addToCartButton" onclick="addToCart()">Add to Cart</button>
-                <button id="BuyItems" onclick="buyItems()">Buy</button>
-                <div id="login-error-msg-holder">
-                    <p id="login-error-msg">
-                        Please enter the id of the Item you would like to purchase here:
-                        <!-- <span id="error-msg-second-line">and/or password</span> -->
-                    </p>
-                </div>
+            
             </section>
             <br>
             <table id="producer_transaction_table">
@@ -89,14 +90,10 @@
                     
                 </tr>
                 </tbody>
-            </table>
-        </body>
-        <body>
-            <main>
-            <section>
-                
-                <br>
-        <button onclick="clearStore_return_to_login()">Logout</button>
+            </table>     
+            <br>
+            <button onclick="clearStore_return_to_login()">Logout</button>
+    </main>
+</body>
 
-            </section>
 </html>
