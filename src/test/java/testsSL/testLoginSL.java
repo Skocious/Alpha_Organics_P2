@@ -9,8 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.sql.SQLException;
-
 public class testLoginSL {
     public static LoginImp loginDAO = new LoginImp();
     public static LoginSImp loginSO = new LoginSImp(loginDAO);
