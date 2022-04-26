@@ -46,6 +46,7 @@ public class Apps {
         app.post("/transactions", transactionsController.createTransaction);
 
         app.get("/transactions/{username}", transactionsController.getAllTransactionsByUserName);
+        //app.get("/transactions", transactionsController.)
 
         //app.post("/items", itemsController.mockCreateItems);
 
