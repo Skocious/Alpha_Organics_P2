@@ -11,7 +11,7 @@ public class LoginSImp implements LoginSO {
     public LoginSImp(LoginDAO loginDAO) {
         this.loginDAO = loginDAO;
     }
-//set the value login
+
     @Override
     public Login serviceSelectLoginName(String Username, String Password) {
         Login l;
@@ -22,17 +22,14 @@ public class LoginSImp implements LoginSO {
             throw new InvalidLogin("Username and/or Password is wrong, please try again.");
         }
         if (l.getUsername() != null)
-                return l;
-        else{
+            return l;
+        else {
             throw new InvalidLogin("Username and/or Password is wrong, please try again.");
-
         }
 
-
     }
+
 }
-
-
 
 
 
