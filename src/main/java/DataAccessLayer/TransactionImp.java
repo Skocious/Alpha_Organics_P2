@@ -47,8 +47,8 @@ public class TransactionImp implements TransactionDAO{
                         rs.getInt("item_id")
                 );
                 transaction.add(transactionList);
-                transaction.add(transactionList);
-                transaction.add(transactionList);
+//                transaction.add(transactionList);
+//                transaction.add(transactionList);
             }
             return transaction;
         } catch (SQLException e) {

@@ -3,22 +3,22 @@ const itemName = document.getElementById("item_field");
 const itemDescription = document.getElementById("item_description_field");
 const itemPrice = document.getElementById("item_price_field");
 const userName = window.localStorage.getItem("Username");
-
+const itemsTableBody = document.getElementById("items_body");
 
 
 function saleTable(returnedInfo){
     itemsTableBody.innerHTML = "";
     let requestId = 1
-    for (let obj in returnedInfo) {
-        //console.log(returnedInfo[obj])
+    for (let obj of returnedInfo) {
+        console.log(obj)
         const newRow = document.createElement("tr");
         itemsTableBody.appendChild(newRow);
-        const item_id = returnedInfo[obj].item_id;
-        const login_name = returnedInfo[obj].login_name;
-        const item_name = returnedInfo[obj].item_name;
-        const item_description = returnedInfo[obj].item_description;
-        const price = returnedInfo[obj].price;
-        returnedInfoList = [item_id, login_name, item_name, item_description, price];
+        const itemId = obj.itemId;
+        const loginName = obj.loginName;
+        const itemName = obj.itemName;
+        const itemDescription = obj.itemDescription;
+        const price = obj.price;
+        returnedInfoList = [itemId, loginName, itemName, itemDescription, price];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements
@@ -32,12 +32,10 @@ function saleTable(returnedInfo){
 async function requestItems() {
 
     let getURL = "http://localhost:8080/items/"
-
-    // let response = await fetch(getURL + login_name, { method: "GET" })
     let response = await fetch(getURL, { method: "GET" })
     if (response.status === 200) {
         let returnedInfo = await response.json();
-       // console.log(returnedInfo);
+        console.log(returnedInfo);
         saleTable(returnedInfo);
  }  else if (response.status === 400) {
         let responseBody = await response.json()
