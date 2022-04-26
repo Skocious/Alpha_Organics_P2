@@ -29,7 +29,7 @@ public class TransactionSImp implements TransactionSO {
     }
 
     @Override
-    public Transaction serviceGetAllTransactionByUsername(String Username) {
+    public List<Transaction> serviceGetAllTransactionByUsername(String Username) {
         if (Username.length() <= 20 &&
             Username.length() != 0)
         {

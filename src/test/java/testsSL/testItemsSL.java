@@ -90,14 +90,14 @@ public class testItemsSL {
     public void serviceSelectAllItemsSuccess(){
         Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
         List<Items> resultList = itemsSO.serviceSelectAllItems();
-        Assert.assertTrue(resultList.size() >= 1);
+        Assert.assertTrue(resultList.size() != 1);
     }
-//    @Test
-//    public void serviceSelectAllItemsFailure(){
-//        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
-//        List<Items> resultList = itemsSO.serviceSelectAllItems();
-//        Assert.assertFalse(resultList.size() >= 1);
-//    }
+    @Test
+    public void serviceSelectAllItemsFailure(){
+        Mockito.doReturn(listMock).when(itemsDAO).selectAllItems();
+        List<Items> resultList = itemsSO.serviceSelectAllItems();
+        Assert.assertFalse(resultList.size() >= 1);
+    }
     @Test
     public void serviceUpdateItemsByItemIdSuccess(){
         Mockito.doReturn(new Items(0, "customer2", "Grapes", "red seedless grapes", 2)).when(itemsDAO).updateItemsById(testMock);
@@ -111,9 +111,9 @@ public class testItemsSL {
         Assert.assertNotSame(result.getItemName(), "goat");
     }
 
-    @Test//(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Item description too long")
+    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Item description too long")
     public void serviceUpdateInvalidItemDescription() {
-        Items items = new Items(1, "customer1", "goats", "goatsgoatsgoatsgoatsgoatsgoatsgogoatsgoatsgoatsgoatsgoatsatsgoatsgoatsgoats", 99);
+        Items items = new Items(1, "customer1", "goats", "goatsgoatsgoatsgoatsgoatsgoatsgogoatsgoatsgoatsgoatsgoatsatsgoatsgoatsgoatsgoatsatsgoatsgoatsgoatsgoatsgoatsgoats", 99);
         Items result = itemsSO.serviceUpdateItemsById(items);
         Assert.assertNotEquals(result, items);
     }
@@ -132,7 +132,7 @@ public class testItemsSL {
         Assert.assertNotSame(result.getPrice(), "99");
     }
 
-
+//Assert.assertTrue(result.getPrice() == items.getPrice());
 
 
 

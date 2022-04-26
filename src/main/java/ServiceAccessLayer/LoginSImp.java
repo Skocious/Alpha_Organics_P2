@@ -3,6 +3,8 @@ import DataAccessLayer.LoginDAO;
 import customExceptions.InvalidLogin;
 import entities.Login;
 
+import javax.swing.*;
+
 public class LoginSImp implements LoginSO {
     LoginDAO loginDAO;
 
@@ -12,16 +14,22 @@ public class LoginSImp implements LoginSO {
 
     @Override
     public Login serviceSelectLoginName(String Username, String Password) {
+        Login l;
         if (Username.length() <= 20 &&
             Password.length() <= 20)
-            return this.loginDAO.selectLoginName(Username, Password);
+            l = this.loginDAO.selectLoginName(Username, Password);
         else {
             throw new InvalidLogin("Username and/or Password is wrong, please try again.");
         }
+        if (l.getUsername() != null)
+            return l;
+        else {
+            throw new InvalidLogin("Username and/or Password is wrong, please try again.");
+        }
+
     }
+
 }
-
-
 
 
 
