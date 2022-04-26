@@ -10,7 +10,7 @@ const password = document.getElementById("password-field");
         
         let loginInfoJSON = {
             "Username": id_name.value,
-            "pw": password.value
+            "Password": password.value
         }
 
         let loginCredentials = {
@@ -18,10 +18,10 @@ const password = document.getElementById("password-field");
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(loginInfoJSON)
         }
-        const httpResponse = await fetch("http://localhost:8080/login", loginCredentials)
-        if (httpResponse.status == 200){
-            const httpResponseBody = await httpResponse.json()
-            window.localStorage.setItem('login_name', httpResponseBody['login_name'])
+        const httpResponse = await fetch("http://localhost:8080/username", loginCredentials)
+        if (httpResponse.status == 201){
+            //const httpResponseBody = await httpResponse.json()
+            //window.localStorage.setItem('Username', httpResponseBody['login_name'])
             window.location.href = "customerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")
@@ -32,10 +32,10 @@ const password = document.getElementById("password-field");
 
         console.log(id_name.value)
         console.log(password.value)
-
+        
         let loginInfoJSON = {
             "Username": id_name.value,
-            "pw": password.value
+            "Password": password.value
         }
 
         let loginCredentials = {
@@ -43,10 +43,10 @@ const password = document.getElementById("password-field");
             headers: {"Content-Type": "application/json" },
             body: JSON.stringify(loginInfoJSON)
         }
-        const httpResponse = await fetch("http://localhost:8080/login", loginCredentials)
-        if (httpResponse.status == 200){
-            const httpResponseBody = await httpResponse.json()
-            window.localStorage.setItem('login_name', httpResponseBody['login_name'])
+        const httpResponse = await fetch("http://localhost:8080/username", loginCredentials)
+        if (httpResponse.status == 201){
+            //const httpResponseBody = await httpResponse.json()
+            //window.localStorage.setItem('Username', httpResponseBody['login_name'])
             window.location.href = "producerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")

@@ -46,9 +46,15 @@ async function requestItems() {
 
 
 
-    function addToCart(){
-
-    }
+// function addToCart(){
+//     returnedInfoList = [itemId, Username, itemName, itemDescription, price];
+//     for (let elements of returnedInfoList) {
+//         const tData = document.createElement("td");
+//         tData.textContent = elements
+//         newRow.appendChild(tData)
+//         tData.id = requestId
+//         requestId++
+//     }
 
 
 async function buyItem(){
