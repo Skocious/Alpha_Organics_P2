@@ -33,6 +33,7 @@
             <artifactId>javalin</artifactId>
             <version>4.5.0.RC0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
