@@ -50,10 +50,10 @@ public class ItemsController {
     };
 
     public Handler deleteItemsById = ctx ->{
-        String body = ctx.body();
+        int body =  Integer.parseInt(ctx.pathParam("id"));
         Gson gson = new Gson();
-        Items items = gson.fromJson(body, Items.class);
-        itemsSO.serviceDeleteItemsById(items.getItemId());
+        //Items items = gson.fromJson(body, Items.class);
+        itemsSO.serviceDeleteItemsById(body);
         ctx.result("Item deleted");
         ctx.status(200);
     };

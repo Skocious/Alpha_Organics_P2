@@ -1,13 +1,13 @@
 const item_id = document.getElementById("item_id_field");
 const item_name = document.getElementById("item_field");
 const item_description = document.getElementById("item_description_field");
-const price = document.getElementById("item_price_field");
+//const Price = document.getElementById("item_price_field");
 //const userName = window.localStorage.getItem("login_name");
 const transaction_id = window.localStorage.getItem("transaction_id");
 const login_name = window.localStorage.getItem("login_name");
 const itemsTableBody = document.getElementById("items_body");
 //const totalItemsTable = document.getElementById("producer_body");
-console.log(login_name);
+
 
 function saleTable(returnedInfo){
     itemsTableBody.innerHTML = "";
@@ -88,15 +88,16 @@ async function buyItem(){
     }
 }
 async function totalItemsSale() {
-    let totalItemsTable = document.getSelection(login_name)
-    let bresponse = await fetch("http://localhost:8080/transactions/" + totalItemsTable)
+    
+    //let totalItemsTable = document.getSelection(login_name)
+    let bresponse = await fetch(`http://localhost:8080/transactions/${localStorage.getItem("login_name")}`)
     if (bresponse.status === 200) {
         console.log(bresponse)
         const value = await bresponse.json()
-        totalItemsTable.textContent = value
+        totalItemsSale.textContent = value
         
-        totalItemsSale();
-        //console.log(value)
+        //totalItemsSale();
+       // console.log(value)
        
   } else if (bresponse.status === 400) {
         let responseBody = await bresponse.json()
