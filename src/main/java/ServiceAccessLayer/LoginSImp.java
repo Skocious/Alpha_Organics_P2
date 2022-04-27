@@ -1,6 +1,6 @@
 package ServiceAccessLayer;
 import DataAccessLayer.LoginDAO;
-import customExceptions.InvalidLogin;
+import ServiceAccessLayer.customExceptions.InvalidLogin;
 import entities.Login;
 
 public class LoginSImp implements LoginSO {

@@ -3,7 +3,7 @@ package testsSL;
 import DataAccessLayer.ItemsImp;
 import ServiceAccessLayer.ItemsSImp;
 
-import customExceptions.InvalidId;
+import ServiceAccessLayer.customExceptions.InvalidId;
 import entities.Items;
 
 import org.mockito.Mockito;
