@@ -43,17 +43,17 @@ public class ItemsController {
     public Handler updateItemsById = ctx ->{
         String body = ctx.body();
         Gson gson = new Gson();
-        Items items = gson.fromJson(body, Items.class);
-        itemsSO.serviceUpdateItemsById(items);
+        Items item = gson.fromJson(body, Items.class);
+        itemsSO.serviceUpdateItemsById(item);
         ctx.result("Item updated");
         ctx.status(200);
     };
 
     public Handler deleteItemsById = ctx ->{
-        String body = ctx.body();
+        int body =  Integer.parseInt(ctx.pathParam("id"));
         Gson gson = new Gson();
-        Items items = gson.fromJson(body, Items.class);
-        itemsSO.serviceDeleteItemsById(items.getItemId());
+        //Items items = gson.fromJson(body, Items.class);
+        itemsSO.serviceDeleteItemsById(body);
         ctx.result("Item deleted");
         ctx.status(200);
     };

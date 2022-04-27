@@ -21,7 +21,7 @@ public class testItems {
 
     @Test
     public void createItemsSuccess() {
-        Items newItem = new Items(0, "customer1", "monkey", "chimpanzee", 1000);
+        Items newItem = new Items(0, "producer1", "nuts", "1 lb of whole pecans", 10);
         Items resultNewItems = itemsDAO.createItems(newItem);
         Assert.assertNotEquals(resultNewItems.getItemId(), 0);
 
@@ -36,8 +36,8 @@ public class testItems {
 
     @Test
     public void selectItemsByIdSuccess() {
-        Items items = itemsDAO.selectItemsById(2);
-        Assert.assertEquals(items.getItemId(), 2);
+        Items items = itemsDAO.selectItemsById(10);
+        Assert.assertEquals(items.getItemId(), 10);
     }
 
 //    @Test
@@ -70,17 +70,17 @@ public class testItems {
 
     }
 
-//    @Test
-//    public void getAllItemsByIdFailure() {
-//        List<Items> items = itemsDAO.selectAllItems();
-//        int listLength = items.size();
-//        Assert.assertFalse(items.size() <= 0);
-//
-//    }
+    @Test
+    public void getAllItemsByIdFailure() {
+        List<Items> items = itemsDAO.selectAllItems();
+        int listLength = items.size();
+        Assert.assertFalse(items.size() <= 0);
+
+    }
 
     @Test
     public void deleteItemsByIdSuccess(){
-        int items = itemsDAO.deleteItemsById(1);
+        int items = itemsDAO.deleteItemsById(-1); //Do not try to delete item 2 will throw fkey error
         Assert.assertTrue(items != 0);
     }
 }

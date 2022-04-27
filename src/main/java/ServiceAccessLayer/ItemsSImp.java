@@ -1,11 +1,8 @@
 package ServiceAccessLayer;
 import DataAccessLayer.ItemsDAO;
-import DataAccessLayer.ItemsImp;
 import customExceptions.InvalidId;
 import entities.Items;
 
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
 import java.util.List;
 
 public class ItemsSImp implements ItemsSO {

@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import entities.Items;
 import entities.Transaction;
 import utilities.DataBaseConnection;
 
@@ -31,19 +32,24 @@ public class TransactionImp implements TransactionDAO{
     }
 
     @Override
-    public Transaction getAllTransactionByUsername(String Username) {
+    public List<Transaction> getAllTransactionByUsername(String Username) {
         try (Connection connection = DataBaseConnection.createConnection()) {
             String sql = "select * from transaction where login_name = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, Username);
             ResultSet rs = ps.executeQuery();
-            rs.next();
-            Transaction transaction = new Transaction(
-                    rs.getInt("transaction_id"),
-                    rs.getString("login_name"),
-                    rs.getFloat("transaction_amount"),
-                    rs.getInt("item_id")
-            );
+            List<Transaction> transaction = new ArrayList<>();
+            while (rs.next()) {
+                Transaction transactionList = new Transaction(
+                        rs.getInt("transaction_id"),
+                        rs.getString("login_name"),
+                        rs.getFloat("transaction_amount"),
+                        rs.getInt("item_id")
+                );
+                transaction.add(transactionList);
+//                transaction.add(transactionList);
+//                transaction.add(transactionList);
+            }
             return transaction;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,9 +1,10 @@
-const itemId = document.getElementById("item_id_field");
-const itemName = document.getElementById("item_field");
-const itemDescription = document.getElementById("item_description_field");
-const itemPrice = document.getElementById("item_price_field");
-const userName = window.localStorage.getItem("login_name");
-const tId = window.localStorage.getItem("transaction_id")
+const item_id = document.getElementById("item_id_field");
+const item_name = document.getElementById("item_field");
+const item_description = document.getElementById("item_description_field");
+const transaction_id = window.localStorage.getItem("transaction_id");
+const login_name = window.localStorage.getItem("login_name");
+const itemsTableBody = document.getElementById("items_body");
+const transactionTableBody = document.getElementById("producer_body");
 
 
 function saleTable(returnedInfo){
@@ -13,12 +14,12 @@ function saleTable(returnedInfo){
         //console.log(returnedInfo[obj])
         const newRow = document.createElement("tr");
         itemsTableBody.appendChild(newRow);
-        const item_id = returnedInfo[obj].item_id;
-        const login_name = returnedInfo[obj].login_name;
-        const item_name = returnedInfo[obj].item_name;
-        const item_description = returnedInfo[obj].item_description;
+        const itemId = returnedInfo[obj].itemId;
+        const Username = returnedInfo[obj].Username;
+        const itemName = returnedInfo[obj].itemName;
+        const itemDescription = returnedInfo[obj].itemDescription;
         const price = returnedInfo[obj].price;
-        returnedInfoList = [item_id, login_name, item_name, item_description, price];
+        let returnedInfoList = [itemId, Username, itemName, itemDescription, price];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements
@@ -29,65 +30,90 @@ function saleTable(returnedInfo){
     }
 }
 
+function transactionTable(values){
+    transactionTableBody.innerHTML = "";
+    let requestId = 1
+    for (let obj of values) {
+        console.log(obj)
+        const newtRow = document.createElement("tr");
+        transactionTableBody.appendChild(newtRow);
+        const transactionId = obj.transactionId;
+        const Username = obj.Username;
+        const transactionAmount = obj.transactionAmount;
+        const itemId = obj.itemId;
+        let returnedTInfoList = [transactionId, Username, transactionAmount, itemId ];
+        for (let elements of returnedTInfoList) {
+            const tData = document.createElement("td");
+            tData.textContent = elements
+            newtRow.appendChild(tData)
+            tData.id = requestId
+            requestId++
+        }
+    }
+}
+
+
+
+
 async function requestItems() {
 
-    let getURL = "http://127.0.0.1:5000/get_all_items_by_login_name/"
-
-    let response = await fetch(getURL + login_name, { method: "GET" })
-
+    let getURL = "http://localhost:8080/items/"
+    let response = await fetch(getURL, { method: "GET" })
     if (response.status === 200) {
         let returnedInfo = await response.json();
-       // console.log(returnedInfo);
+        //console.log(returnedInfo);
         saleTable(returnedInfo);
     }else if (response.status === 400) {
         let responseBody = await response.json()
         alert(responseBody.message);
     }
+}
+
+async function totalItemsSale() {
+    let bresponse = await fetch(`http://localhost:8080/transactions/${localStorage.getItem("login_name")}`)
+    if (bresponse.status === 200) {
+        
+        let values = await bresponse.json()
+        console.log(values);
+       // totalItemsTable.textContent = value 
+        transactionTable(values);    
+  } else if (bresponse.status === 400) {
+        let values = await bresponse.json()
+        alert(values.message);
+    }
+}
+
+
 
 async function buyItem(){
-
     let newTransactionRequest = {
-        "transaction_id": tId.value,
-        "login_name": userName.value,
-        "transaction_amount": tItemAmount.value,
-        "item_id": i
+        "transactionId": 2,
+        "Username": login_name,
+        "transactionAmount": 10,
+        "itemId": 1
     }
-    console.log(newPurchaseRequest)
+    console.log(newTransactionRequest)
     let newRequest = {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(newCreateRequest)
+        body: JSON.stringify(newTransactionRequest)
     }
-    let response = await fetch("http://8080/create_item_request", newRequest)
+    let response = await fetch("http://localhost:8080/transactions", newRequest)
     if (response.status === 200) {
         alert("Thank you for your purchase, your items are ready for pickup!")
-        totalItemsSale();
-        requestItems();
+        //totalItemsSale();
+        //requestItems();
     }else if (response.status === 400) {
         let responseBody = await response.json()
         alert(responseBody.message);   
     }
 }
-async function totalItemsSale() {
-    let totalItemsTable = document.getElementById("all_items")
-    let bresponse = await fetch("http://8080/get_all_items_by_login_name/" + login_name)
-    if (bresponse.status === 200) {
-       // console.log(bresponse)
-       const value = await bresponse.json()
-       // console.log(value)
-       totalItemsTable.textContent = value
-  } else if (bresponse.status === 400) {
-        let responseBody = await bresponse.json()
-        alert(responseBody.message);
-    }
-}
+
+
 
 function clearStore_return_to_login() {
     window.localStorage.clear();
     window.location.href = "landingPage.html";
 }
-
-
-}
-
+totalItemsSale();
 requestItems();
