@@ -2,10 +2,10 @@ const item_id = document.getElementById("item_id_field");
 const item_name = document.getElementById("item_field");
 const item_description = document.getElementById("item_description_field");
 const item_price = document.getElementById("item_price_field");
-const userName = window.localStorage.getItem("login_name");
+//const userName = window.localStorage.getItem("login_name");
 const itemsTableBody = document.getElementById("items_body");
 const deleteid = document.getElementById("delete-Item-Request-Field");
-
+const login_name = window.localStorage.getItem("login_name");
 
 function saleTable(returnedInfo){
     itemsTableBody.innerHTML = "";
@@ -60,7 +60,7 @@ async function createItem(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCreateRequest)
     }
-    let response = await fetch("http://localhost:8080/items", newRequest)
+    let response = await fetch("http://localhost:8080/items" + newRequest)
     if (response.status === 200) {
         //alert("You have successfully created an" + {itemName} + "for sale!")
         totalItemsSale();
@@ -72,16 +72,16 @@ async function createItem(){
 }
 
 async function deleteItem(){
-    let deleteRequest = {
-        "item_id": deleteid.value
-    }
+    // let deleteRequest = {
+    //     "item_id": deleteid.value
+    // }
     let newDelete = {
         method: "DELETE",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(deleteRequest)
+        headers: {"Content-Type": "application/json"}
+        //body: JSON.stringify(deleteRequest)
     }
     //let requestCancelID = document.getElementById("delete-Item-Request-Field")
-    let cresponse = await fetch("http://localhost:8080/items/" + {newDelete})
+    let cresponse = await fetch(`http://localhost:8080/items/${deleteid.value}`, newDelete)
     //console.log(requestCancelID);
     if (cresponse.status === 200) {
         alert("You have successfully deleted item")
