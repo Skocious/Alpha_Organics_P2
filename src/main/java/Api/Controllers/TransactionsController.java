@@ -27,18 +27,18 @@ public class TransactionsController {
     };
 
     public Handler getAllTransactionsByUserName = ctx ->{
-        String body = ctx.body();
+        String body = ctx.pathParam("username");
         Gson gson = new Gson();
-        Transaction transaction = gson.fromJson(body, Transaction.class);
-        List<Transaction> transactions = transactionSO.serviceGetAllTransactionByUsername(transaction.getUsername());
+//        Transaction transaction = gson.fromJson(body, Transaction.class);
+        List<Transaction> transactions = transactionSO.serviceGetAllTransactionByUsername(body);
         List<String> jsonTransaction = new ArrayList<>();
         for(Transaction t: transactions){
-        String json = gson.toJson(t);
-        jsonTransaction.add(json);}
-        ctx.result(jsonTransaction.get(transaction.getTransactionId()));
+            String json = gson.toJson(t);
+            jsonTransaction.add(json);}
+        ctx.result(gson.toJson(jsonTransaction));
         ctx.status(200);
     };
-    
+
 //    public Header createTransaction = ctx ->{
 //        ctx.result(1, 1, 1, 3.00, 1);
 //        ctx.status(201);

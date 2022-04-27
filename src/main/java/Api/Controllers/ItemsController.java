@@ -1,13 +1,9 @@
 package Api.Controllers;
 
-import DataAccessLayer.*;
 import ServiceAccessLayer.*;
 import com.google.gson.Gson;
 import entities.Items;
-import io.javalin.core.util.Header;
 import io.javalin.http.Handler;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
 
 
 public class ItemsController {
@@ -50,10 +46,10 @@ public class ItemsController {
     };
 
     public Handler deleteItemsById = ctx ->{
-        String body = ctx.body();
+        int body =  Integer.parseInt(ctx.pathParam("id"));
         Gson gson = new Gson();
-        Items items = gson.fromJson(body, Items.class);
-        itemsSO.serviceDeleteItemsById(items.getItemId());
+        //Items items = gson.fromJson(body, Items.class);
+        itemsSO.serviceDeleteItemsById(body);
         ctx.result("Item deleted");
         ctx.status(200);
     };
