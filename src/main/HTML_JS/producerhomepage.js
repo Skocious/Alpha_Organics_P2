@@ -49,10 +49,10 @@ async function createItem(){
 
     let newCreateRequest = {
         "itemId": 0,
-        "Username": userName.value,
-        "itemName": item_name.value,
-        "itemDescription":item_description.value,
-        "price": item_price.value
+        "Username": "producer1",
+        "itemName": "apple pie",
+        "itemDescription":"grandmas best",
+        "price": 10
     }
     //console.log(newPurchaseRequest)
     let newRequest = {
@@ -60,10 +60,10 @@ async function createItem(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newCreateRequest)
     }
-    let response = await fetch("http://localhost:8080/items" + newRequest)
-    if (response.status === 200) {
-        //alert("You have successfully created an" + {itemName} + "for sale!")
-        totalItemsSale();
+    let response = await fetch("http://localhost:8080/items" , newRequest)
+    if (response.status === 201) {
+        //let returnedItem = await response.json();
+        alert("You have successfully created an item for sale!")
         requestItems();
   } else if (response.status === 400) {
         let responseBody = await response.json()
@@ -93,19 +93,6 @@ async function deleteItem(){
     }
 }
 
-// async function totalItemsSale() {
-//     let totalItemsTable = document.getElementById("all_items")
-//     let bresponse = await fetch("http://localhost:8080/get_all_items_by_login_name/" + login_name)
-//     if (bresponse.status === 200) {
-//        // console.log(bresponse)
-//        const value = await bresponse.json()
-//        // console.log(value)
-//        totalItemsTable.textContent = value
-//   } else if (bresponse.status === 400) {
-//         let responseBody = await bresponse.json()
-//         alert(responseBody.message);
-//     }
-// }
 
 function clearStore_return_to_login() {
     window.localStorage.clear();

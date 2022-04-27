@@ -39,6 +39,7 @@ const ppassword = document.getElementById("ppassword-field");
         console.log(ppassword.value)
         
         let loginInfoJSON = {
+            "itemId": "",
             "Username": pid_name.value,
             "Password": ppassword.value
         }
@@ -50,7 +51,8 @@ const ppassword = document.getElementById("ppassword-field");
         }
         const httpResponse = await fetch("http://localhost:8080/username", loginCredentials)
         if (httpResponse.status == 201){
-            const httpResponseBody = await httpResponse.json()
+            const httpResponseBody = httpResponse.json()
+            console.log(httpResponseBody);
             window.localStorage.setItem('login_name', loginInfoJSON["Username"])
             window.location.href = "producerHomepage.html"    
         } else {
