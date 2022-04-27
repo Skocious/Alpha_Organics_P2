@@ -55,7 +55,7 @@ table.center {
     margin-top: auto;
 }
 
-table th,
+
 td {
     text-align: center;
     flex-grow: 1;

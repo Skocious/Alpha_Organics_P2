@@ -6,8 +6,9 @@ const price = document.getElementById("item_price_field");
 const transaction_id = window.localStorage.getItem("transaction_id");
 const login_name = window.localStorage.getItem("login_name");
 const itemsTableBody = document.getElementById("items_body");
-const totalItemsTable = document.getElementById("producer_body");
+//const totalItemsTable = document.getElementById("producer_body");
 console.log(login_name);
+
 function saleTable(returnedInfo){
     itemsTableBody.innerHTML = "";
     let requestId = 1
@@ -20,7 +21,7 @@ function saleTable(returnedInfo){
         const itemName = returnedInfo[obj].itemName;
         const itemDescription = returnedInfo[obj].itemDescription;
         const price = returnedInfo[obj].price;
-        returnedInfoList = [itemId, Username, itemName, itemDescription, price];
+        let returnedInfoList = [itemId, Username, itemName, itemDescription, price];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements

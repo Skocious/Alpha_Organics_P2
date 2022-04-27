@@ -19,7 +19,7 @@ function saleTable(returnedInfo){
         const itemName = returnedInfo[obj].itemName;
         const itemDescription = returnedInfo[obj].itemDescription;
         const price = returnedInfo[obj].price;
-        returnedInfoList = [itemId, Username, itemName, itemDescription, price];
+        let returnedInfoList = [itemId, Username, itemName, itemDescription, price];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements
