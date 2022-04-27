@@ -46,8 +46,8 @@
             <table id="items_table" class="center">
                 <thead id="item_head">
                     <tr>
+                        <th>Item ID</th>
                         <th>Producer Name</th>
-                        <th>Item Name</th>
                         <th>Item Name</th>
                         <th>Item Description</th>
                         <th>Item Price</th>
@@ -58,18 +58,18 @@
 
                     </tr>
                 </tbody>
-                <tfoot id="all_buy">
+                <!-- <tfoot id="all_buy">
                     <tr>
                         <th id="all_items"></th>
                     </tr>
-                </tfoot>
+                </tfoot> -->
             </table>
         </section>
         <br>
         <div style="text-align: center;" class="request">
             <label for="cancel-req">Cancel Item:</label>
             <input type="number" name="cancelReq" id="delete-Item-Request-Field" placeholder="Please enter Item ID." required>
-            <button id="cancelButton" onclick="cancelItemId()">Delete Item</button>
+            <button id="cancelButton" onclick="deleteItem()">Delete Item</button>
         </div>
         <br>
         <button onclick="clearStore_return_to_login()">Logout</button>
