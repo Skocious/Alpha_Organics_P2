@@ -23,7 +23,7 @@ const ppassword = document.getElementById("ppassword-field");
         const httpResponse = await fetch("http://localhost:8080/username", loginCredentials)
         if (httpResponse.status == 201){
             //const httpResponseBody = await httpResponse.json()
-            //window.localStorage.setItem('Username', httpResponseBody['login_name'])
+            //window.localStorage.setItem('userName', httpResponseBody['login_name'])
             window.location.href = "customerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")
@@ -48,7 +48,7 @@ const ppassword = document.getElementById("ppassword-field");
         const httpResponse = await fetch("http://localhost:8080/username", loginCredentials)
         if (httpResponse.status == 201){
             //const httpResponseBody = await httpResponse.json()
-            //window.localStorage.setItem('Username', httpResponseBody['login_name'])
+            //window.localStorage.setItem('userName', httpResponseBody['login_name'])
             window.location.href = "producerHomepage.html"    
         } else {
             alert("Incorrect Login Info, Please Try Again")

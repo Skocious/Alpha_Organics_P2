@@ -6,8 +6,8 @@ const price = document.getElementById("item_price_field");
 const transaction_id = window.localStorage.getItem("transaction_id");
 const login_name = window.localStorage.getItem("login_name");
 const itemsTableBody = document.getElementById("items_body");
-//const totalItemsTable = document.getElementById("producer_body");
-
+const totalItemsTable = document.getElementById("producer_body");
+console.log(login_name);
 function saleTable(returnedInfo){
     itemsTableBody.innerHTML = "";
     let requestId = 1
@@ -33,14 +33,13 @@ function saleTable(returnedInfo){
 
 
 
-
 async function requestItems() {
 
     let getURL = "http://localhost:8080/items/"
     let response = await fetch(getURL, { method: "GET" })
     if (response.status === 200) {
         let returnedInfo = await response.json();
-        console.log(returnedInfo);
+        //console.log(returnedInfo);
         saleTable(returnedInfo);
     }else if (response.status === 400) {
         let responseBody = await response.json()
@@ -62,11 +61,14 @@ async function requestItems() {
 
 async function buyItem(){
 
+    //console.log(login_name)
+    //console.log(transactionAmount.value)
+
     let newTransactionRequest = {
-        "transaction_id": tId.value,
-        "login_name": userName.value,
-        "transaction_amount": tItemAmount.value,
-        "item_id": itemId.value
+        "transactionId": 0,
+        "Username": login_name.value,
+        "transactionAmount": transactionAmount.value,
+        "itemId": item_id.value
     }
     console.log(newTransactionRequest)
     let newRequest = {
@@ -77,23 +79,23 @@ async function buyItem(){
     let response = await fetch("http://localhost:8080/transactions", newRequest)
     if (response.status === 200) {
         alert("Thank you for your purchase, your items are ready for pickup!")
-        totalItemsSale();
-        requestItems();
+        //totalItemsSale();
+        //requestItems();
     }else if (response.status === 400) {
         let responseBody = await response.json()
         alert(responseBody.message);   
     }
 }
 async function totalItemsSale() {
-    let totalItemsTable = document.getElementById("producer_body")
-    let bresponse = await fetch("http://localhost:8080//transactions/" + "customer1")
+    let totalItemsTable = document.getSelection(login_name)
+    let bresponse = await fetch("http://localhost:8080/transactions/" + totalItemsTable)
     if (bresponse.status === 200) {
         console.log(bresponse)
         const value = await bresponse.json()
         totalItemsTable.textContent = value
         
         totalItemsSale();
-        console.log(value)
+        //console.log(value)
        
   } else if (bresponse.status === 400) {
         let responseBody = await bresponse.json()
