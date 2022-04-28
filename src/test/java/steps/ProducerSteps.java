@@ -28,11 +28,17 @@ public class ProducerSteps {
     @When("I click the item submit button")
     public void I_click_the_item_submit_button() { TestRunner.producer.CreateItem.click();}
 
+    @Then("I can post an item to sell")
+    public void i_can_post_an_item_to_sell() {  Assert.assertEquals(TestRunner.driver.getTitle(),"Alpha Organic's Producer Homepage");}
+
     @When("I enter a valid {string} in to the cancel item field")
     public void I_enter_a_valid_itemId_in_the_field(String string) { TestRunner.producer.deleteField.sendKeys(string);}
 
     @When("I click the delete button")
     public void I_click_the_delete_button() { TestRunner.producer.deleteButton.click();}
+
+    @Then("I can delete the item")
+    public void I_can_delete_the_item() {Assert.assertEquals(TestRunner.driver.getTitle(),"Alpha Organic's Producer Homepage");}
 
     @When("I click on producer Log out button")
     public void i_click_the_producer_logout_button() {

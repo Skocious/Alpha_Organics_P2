@@ -1,6 +1,6 @@
 Feature: Producer can login into the Alpha Organics Website.
 
-  Scenario Outline:
+  Scenario Outline: Producer can login into the Alpha Organics Website
     Given I am on the Producer login home page
     When I enter "<loginName>" into the producer login input bar
     When I type out "<password>" into the producer password input bar

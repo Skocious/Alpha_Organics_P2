@@ -21,6 +21,9 @@ public class CustomerShoppingSteps {
         TestRunner.customerShoppingHome.Buy.click();
     }
 
+    @Then("I bought an item")
+    public void i_bought_Item() {Assert.assertEquals(TestRunner.driver.getTitle(),"Alpha Organics Homepage");}
+
     @When("I click the logout button")
     public void i_click_the_logout_button() {
         TestRunner.customerShoppingHome.Logout.click();

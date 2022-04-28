@@ -1,12 +1,15 @@
 Feature: Customer can purchase the item and from the item list.
 
-  Scenario Outline:
+  Scenario Outline: Customer can purchase the item and from the item list
     Given I am on customer home page
     When I enter the "<ItemID>" into the ItemId input bar
     When I click the buy now button
-    When I click the logout button
-    Then I customer logout successfully and got back to the Login page
+    Then I bought an item
 
     Examples:
       | ItemID |
       | 10 |
+
+    Scenario: Customer Can Logout
+      When I click the logout button
+      Then I customer logout successfully and got back to the Login page
