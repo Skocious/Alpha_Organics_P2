@@ -6,6 +6,8 @@ import ServiceAccessLayer.ItemsSImp;
 import customExceptions.InvalidId;
 import entities.Items;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.testng.Assert;
@@ -17,6 +19,7 @@ import java.util.List;
 
 
 public class testItemsSL {
+    public static Logger logger = LogManager.getLogger(testItemsSL.class);
     public static ItemsImp itemsDAO = new ItemsImp();
     public static ItemsSImp itemsSO = new ItemsSImp(itemsDAO);
     public static List<Items> listMock = new ArrayList<Items>();

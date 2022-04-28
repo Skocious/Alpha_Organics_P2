@@ -1,9 +1,13 @@
 package testsDAL;
+import Api.Apps;
 import DataAccessLayer.ItemsImp;
 import entities.Items;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,7 +20,7 @@ import java.util.List;
 
 
 public class testItems {
-
+    public static Logger logger = LogManager.getLogger(testItems.class);
     ItemsImp itemsDAO = new ItemsImp();
 
     @Test
@@ -24,7 +28,7 @@ public class testItems {
         Items newItem = new Items(0, "producer1", "nuts", "1 lb of whole pecans", 10);
         Items resultNewItems = itemsDAO.createItems(newItem);
         Assert.assertNotEquals(resultNewItems.getItemId(), 0);
-
+        logger.info("running Items tests");
     }
 
 //    @Test connection to db failure on sl mock
@@ -75,12 +79,13 @@ public class testItems {
         List<Items> items = itemsDAO.selectAllItems();
         int listLength = items.size();
         Assert.assertFalse(items.size() <= 0);
-
+        logger.info("Items tests finished");
     }
 
     @Test
     public void deleteItemsByIdSuccess(){
         int items = itemsDAO.deleteItemsById(-1); //Do not try to delete item 2 will throw fkey error
         Assert.assertTrue(items != 0);
+
     }
 }

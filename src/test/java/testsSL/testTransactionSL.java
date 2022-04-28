@@ -4,15 +4,19 @@ import DataAccessLayer.TransactionImp;
 import ServiceAccessLayer.TransactionSImp;
 import customExceptions.InvalidId;
 import entities.Transaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import testsDAL.testTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class testTransactionSL {
+    public static Logger logger = LogManager.getLogger(testTransactionSL.class);
     public static TransactionImp transactionDAO = new TransactionImp();
     public static TransactionSImp transactionSO = new TransactionSImp(transactionDAO);
     public static Transaction testMock = new Transaction(1, "customer1", 100f, 1);
@@ -31,6 +35,7 @@ public class testTransactionSL {
         Mockito.doReturn(new Transaction(1, "customer1", 100f, 1)).when(transactionDAO).createTransaction(testMock);
         Transaction result = transactionSO.serviceCreateTransaction(testMock);
         Assert.assertEquals(result.getTransactionId(), 1);
+        logger.info("started Transaction SL tests");
     }
 
     @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")
@@ -57,7 +62,7 @@ public class testTransactionSL {
         Mockito.doReturn(listMock).when(transactionDAO).getAllTransactionByUsername("customer1");
         List<Transaction> resultList = transactionSO.serviceGetAllTransactionByUsername("customer1");
         Assert.assertTrue(resultList.size() >= 0); // Fix needs to be assertTrue >=2
-
+        logger.info("ended Transaction SL tests");
     }
 
 //    @Test(expectedExceptions = InvalidId.class, expectedExceptionsMessageRegExp = "Information entered is not correct, please try again.")

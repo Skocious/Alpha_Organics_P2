@@ -29,5 +29,10 @@ insert into login values(default, 'producer1', '111one');
 insert into login values(default, 'producer2', '222two');
 insert into login values(default, 'producer3', '333three');
 
---TRUNCATE TABLE items RESTART IDENTITY CASCADE;
---TRUNCATE TABLE transaction RESTART IDENTITY CASCADE;
+
+TRUNCATE TABLE items RESTART IDENTITY CASCADE;
+TRUNCATE TABLE transaction RESTART IDENTITY CASCADE;
+insert into items values(-1, 'customer1', 'testDelete', 'testDelete', 1);
+insert into items values(-2, 'customer1', 'testDelete', 'testDelete', 1);
+insert into items values(10, 'producer1', 'fruit', '1 lb of oranges', 5);
+insert into items values(11, 'producer1', 'beef', '10 lb of T-Bones', 1099.99);

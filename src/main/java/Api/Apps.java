@@ -4,20 +4,22 @@ import Api.Controllers.*;
 import DataAccessLayer.*;
 import ServiceAccessLayer.*;
 import io.javalin.Javalin;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class Apps {
 
-//    public static Logger logger = LogManager.getLogger(Apps.class);
+    public static Logger logger = LogManager.getLogger(Apps.class);
 
     public static void main(String[] args) {
+        logger.info("creating Javalin object now");
+
         Javalin app = Javalin.create(config -> {
             config.enableCorsForAllOrigins();
             config.enableDevLogging();
         }).start();
-
+        logger.info("Javalin object created!");
 
         LoginDAO loginDAO = new LoginImp();
         LoginSO loginSO = new LoginSImp(loginDAO);
@@ -60,6 +62,6 @@ public class Apps {
 //
 //    }
 //}
-
+        logger.info("Starting web server");
     }
 }

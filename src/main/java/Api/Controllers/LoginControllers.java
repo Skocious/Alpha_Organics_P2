@@ -5,8 +5,11 @@ import com.google.gson.Gson;
 import customExceptions.LoginError;
 import entities.*;
 import io.javalin.http.Handler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoginControllers {
+    public static Logger logger = LogManager.getLogger(LoginControllers.class);
     public LoginSO loginSO;
     public LoginControllers(LoginSO loginSO){
         this.loginSO = loginSO;
@@ -20,12 +23,10 @@ public class LoginControllers {
             loginSO.serviceSelectLoginName(login.getUsername(), login.getPassword());
             ctx.result(login.getUsername()).status();
             ctx.status(201);
+            logger.info("Successful Login");
         }catch(LoginError e){
             ctx.status(400);
+            logger.info("Failed Login");
         }
     };
-//     public Header selectLoginName = ctx ->{
-//        ctx.result(LoginImp.Login);
-//        ctx.status(200);
-//    };
-};
+}

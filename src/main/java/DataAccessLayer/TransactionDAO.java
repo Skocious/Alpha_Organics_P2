@@ -1,7 +1,6 @@
 package DataAccessLayer;
 
 import entities.Transaction;
-
 import java.util.List;
 
 public interface TransactionDAO {
