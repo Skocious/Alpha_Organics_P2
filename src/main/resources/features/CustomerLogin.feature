@@ -10,4 +10,3 @@ Feature: Customer can login into the Alpha Organics website.
     Examples:
       | loginName | password |
       | customer1 | one111 |
-

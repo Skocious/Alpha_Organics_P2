@@ -1,4 +1,4 @@
-package testsSL;
+package testsDAL;
 
 import DataAccessLayer.TransactionImp;
 import ServiceAccessLayer.TransactionSImp;
@@ -10,7 +10,6 @@ import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import testsDAL.testTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
