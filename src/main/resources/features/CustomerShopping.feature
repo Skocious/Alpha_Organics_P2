@@ -5,7 +5,7 @@ Feature: Customer can purchase the item and from the item list.
     When I enter the "<ItemID>" into the ItemId input bar
     When I click the buy now button
     When I click the logout button
-    Then I logout successfully and got back to the Login page
+    Then I customer logout successfully and got back to the Login page
 
     Examples:
       | ItemID |
