@@ -1,6 +1,6 @@
 package ServiceAccessLayer;
 import DataAccessLayer.ItemsDAO;
-import ServiceAccessLayer.customExceptions.InvalidId;
+import customExceptions.InvalidId;
 import entities.Items;
 
 import java.util.List;

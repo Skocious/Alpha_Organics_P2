@@ -2,7 +2,7 @@ package testsSL;
 
 import DataAccessLayer.TransactionImp;
 import ServiceAccessLayer.TransactionSImp;
-import ServiceAccessLayer.customExceptions.InvalidId;
+import customExceptions.InvalidId;
 import entities.Transaction;
 import org.mockito.Mockito;
 import org.testng.Assert;

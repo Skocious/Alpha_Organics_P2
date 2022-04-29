@@ -1,7 +1,7 @@
 package ServiceAccessLayer;
 import DataAccessLayer.TransactionDAO;
 
-import ServiceAccessLayer.customExceptions.InvalidId;
+import customExceptions.InvalidId;
 import entities.Transaction;
 
 import java.util.List;

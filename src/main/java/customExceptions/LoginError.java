@@ -1,4 +1,4 @@
-package ServiceAccessLayer.customExceptions;
+package customExceptions;
 
 public class LoginError extends RuntimeException{
 

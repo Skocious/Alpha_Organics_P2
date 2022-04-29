@@ -2,7 +2,7 @@ package testsSL;
 
 import DataAccessLayer.LoginImp;
 import ServiceAccessLayer.LoginSImp;
-import ServiceAccessLayer.customExceptions.InvalidLogin;
+import customExceptions.InvalidLogin;
 import entities.Login;
 import org.mockito.Mockito;
 import org.testng.Assert;

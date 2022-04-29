@@ -4,13 +4,9 @@ import Api.Controllers.*;
 import DataAccessLayer.*;
 import ServiceAccessLayer.*;
 import io.javalin.Javalin;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
 
 
 public class Apps {
-
-//    public static Logger logger = LogManager.getLogger(Apps.class);
 
     public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
@@ -31,35 +27,20 @@ public class Apps {
         TransactionSO transactionsSO = new TransactionSImp(transactionDAO);
         TransactionsController transactionsController = new TransactionsController(transactionsSO);
 
-        app.post("/items", itemsController.createItems); //Fail
+        app.post("/items", itemsController.createItems);
 
-        // app.get("/items", itemsController.selectItemsByUsername); //Non Existent
 
-        app.get("/items", itemsController.selectAllItems); //Good Postman Test
+        app.get("/items", itemsController.selectAllItems);
 
-        app.put("/items", itemsController.updateItemsById); //Fail
+        app.put("/items", itemsController.updateItemsById);
 
-        app.delete("/items/{id}", itemsController.deleteItemsById);
+        app.delete("/items/{itemId}", itemsController.deleteItemsById);
 
         app.post("/username", loginControllers.selectLoginName);
 
         app.post("/transactions", transactionsController.createTransaction);
 
-        app.get("/transactions/{username}", transactionsController.getAllTransactionsByUserName);
-
-
-        //app.post("/items", itemsController.mockCreateItems);
-
-
-//        app.get("/items", itemsController.mockSelectAllItems);
-//
-//        app.put("/items", itemsController.mockUpdateItemsBYId);
-//
-//        app.delete("/items/{id}", itemsController.mockDeleteItemsById);
-//
-//
-//    }
-//}
+        app.get("/transactions/{Username}", transactionsController.getAllTransactionsByUserName);
 
     }
 }

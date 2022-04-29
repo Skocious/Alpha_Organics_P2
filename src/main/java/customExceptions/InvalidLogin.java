@@ -1,4 +1,4 @@
-package ServiceAccessLayer.customExceptions;
+package customExceptions;
 
 public class InvalidLogin extends RuntimeException{
     public InvalidLogin(String message){

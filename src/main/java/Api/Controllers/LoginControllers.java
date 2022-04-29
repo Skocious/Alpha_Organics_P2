@@ -2,7 +2,7 @@ package Api.Controllers;
 
 import ServiceAccessLayer.*;
 import com.google.gson.Gson;
-import customExceptions.LoginError;
+import customExceptions.*;
 import entities.*;
 import io.javalin.http.Handler;
 
@@ -21,11 +21,8 @@ public class LoginControllers {
             ctx.result(login.getUsername()).status();
             ctx.status(201);
         }catch(LoginError e){
+            ctx.result(e.getMessage());
             ctx.status(400);
         }
     };
-//     public Header selectLoginName = ctx ->{
-//        ctx.result(LoginImp.Login);
-//        ctx.status(200);
-//    };
 };
