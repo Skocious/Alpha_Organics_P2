@@ -32,6 +32,4 @@ public class CustomerLoginSteps {
         String title = TestRunner.driver.getTitle();
         Assert.assertEquals("Alpha Organics",title);
     }
-
-
 }

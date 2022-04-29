@@ -63,7 +63,7 @@ async function createItem(){
     let response = await fetch("http://localhost:8080/items" , newRequest)
     if (response.status === 201) {
         //let returnedItem = await response.json();
-        alert("You have successfully created an item for sale!")
+        //alert("You have successfully created an item for sale!")
         requestItems();
   } else if (response.status === 400) {
         let responseBody = await response.json()
@@ -83,7 +83,7 @@ async function deleteItem(){
     //let requestCancelID = document.getElementById("delete-Item-Request-Field")
     let cresponse = await fetch(`http://localhost:8080/items/${deleteid.value}`, newDelete)
     //console.log(requestCancelID);
-    if (cresponse.status === 200) {
+    if (cresponse.status === 201) {
         alert("You have successfully deleted item")
         //totalItemsSale();
         requestItems();

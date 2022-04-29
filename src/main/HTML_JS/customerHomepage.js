@@ -99,7 +99,7 @@ async function buyItem(){
         body: JSON.stringify(newTransactionRequest)
     }
     let response = await fetch("http://localhost:8080/transactions", newRequest)
-    if (response.status === 200) {
+    if (response.status === 201) {
         alert("Thank you for your purchase, your items are ready for pickup!")
         //totalItemsSale();
         //requestItems();

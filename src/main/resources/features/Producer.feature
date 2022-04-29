@@ -6,6 +6,7 @@ Feature: As a Producer, I want to add items to my inventory
     When I enter the "<itemDescription>" in to the item description field
     When I enter a "<price>" in to the price field
     When I click the item submit button
+    #When I get an alert
     Then I can post an item to sell
 
     Examples:

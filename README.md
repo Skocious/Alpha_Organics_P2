@@ -23,7 +23,7 @@ See a history of what has been purchased from a particular or all producers.
 Clone the Github Repo (https://github.com/Skocious/Alpha_Organics_P2.git) Install required packages, Set environment variables for DB access
 
 ## How To Run App
-Run main.py to start the web development server, Interact with app through HTML pages
+Run Apps.java to start the web development server (Remember your environment variables), Interact with app through HTML pages
 
 ## To use
 log-in through the landing to gain access to the customer/producer homepage 

@@ -18,7 +18,4 @@ public class CustomerLoginHome {
     @FindBy(id = "customerLoginButton")
     public WebElement CustomerLogin;
 
-
-
-
 }

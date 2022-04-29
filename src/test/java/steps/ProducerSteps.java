@@ -25,8 +25,14 @@ public class ProducerSteps {
         TestRunner.producer.price.sendKeys(string);
     }
 
+
     @When("I click the item submit button")
     public void I_click_the_item_submit_button() { TestRunner.producer.CreateItem.click();}
+
+    @When("I get an alert")
+    public void i_get_an_alert_item_bought_successfully() {
+        TestRunner.driver.switchTo().alert();
+    }
 
     @Then("I can post an item to sell")
     public void i_can_post_an_item_to_sell() {  Assert.assertEquals(TestRunner.driver.getTitle(),"Alpha Organic's Producer Homepage");}

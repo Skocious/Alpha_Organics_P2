@@ -25,6 +25,6 @@ public class Producer {
     public WebElement deleteField;
     @FindBy(id= "cancelButton")
     public WebElement deleteButton;
-    @FindBy(id = "producerLo22goutButton")
+    @FindBy(id = "producerLogoutButton")
     public WebElement ProducerLogout;
 }
