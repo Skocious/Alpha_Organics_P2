@@ -1,5 +1,5 @@
 # Alpha_Organics_P2 (Revature P2)
-## This application will let producers create and manage whole farm goods and sell them directly to customers who purchase from the farmers from an online marketplace. 
+## This application will let producers create and manage farm produced goods and wholesale them directly to customers who purchase from the farmers via an online marketplace. 
 
 ### Technologies Used
 Github, IntelliJ, Java, VS Code, JavaScript, HTML, CSS, DBeaver, Postgres SQL, Javalin, Mockito, REST, Postman, JUnit, Selenium, AWS RDS, AWS EC2, Cucumber+, Gherkin
